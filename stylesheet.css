@@ -1,0 +1,193 @@
+body {
+background-image:url(img/bg.png);
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: #131A22;
+	color: white;
+	text-align: center;
+  }
+
+header {
+    
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    border-style: solid;
+  }
+/*
+p {
+    border-width: thin;
+    border-style: thin;
+    
+    padding-right: 1em;
+    float: left;
+    margin-right: 1em;
+    position: fixed;
+  }
+*/
+#Text1 {
+
+  padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    text-align: left;
+    font-size: 25px;
+    color: black;
+    border-style: solid;
+
+}
+
+
+#Text2{
+padding: 40px;
+font-family: Georgia, 'Times New Roman', Times, serif ;
+text-align: left;
+font-size: 20px;
+color: black;
+border-style: solid;
+}
+
+#Text5{
+  padding: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  text-align: left;
+  font-size: 15px;
+  color: grey;
+  border-style: solid;
+  border-color: black;
+  }
+#Text3{
+  padding: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif ;
+  text-align: left;
+  font-size: 20px;
+  color: black;
+  border-style: solid;
+  }
+
+#Text4{
+    padding: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    text-align: left;
+    font-size: 20px;
+    color: black;
+    border-style: solid;
+   }
+
+
+.floatRight{float:left; border-style: solid; border-color: black;}
+
+#navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #405F71;
+    float: left;
+
+  }
+
+
+
+ } 
+
+
+#navigation_li {
+    display: block;
+    width: 60px;
+    background-color: #dddddd;
+  }
+
+  #navigation_li:hover {
+    background-color: #555;
+    color: white;
+  }
+
+
+  .navbar {
+    overflow: hidden;
+   
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+
+  /* Nur Dropdown titel in liste */
+
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color:white;
+    padding: 14px 16px;
+    background-color: #222222;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+
+
+
+
+
+
+
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: black;
+  }
+  
+/* Dropdown background*/
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+    min-width: 145px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+/* Schrift in DropdownMenu */
+
+  .dropdown-content a {
+    float: none;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  
+  .navbar a.active {
+
+background-color: black;
+color:white;
+  }
+    
