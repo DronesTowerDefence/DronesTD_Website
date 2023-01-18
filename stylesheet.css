@@ -1,85 +1,3 @@
-body {
-background-image:url(img/bg.png);
-}
-
-footer {
-	position: fixed;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-	background-color: #131A22;
-	color: white;
-	text-align: center;
-  }
-
-header {
-    
-    padding: 15px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    font-size: 50px;
-    color: black;
-    border-style: solid;
-  }
-/*
-p {
-    border-width: thin;
-    border-style: thin;
-    
-    padding-right: 1em;
-    float: left;
-    margin-right: 1em;
-    position: fixed;
-  }
-*/
-#Text1 {
-
-  padding: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif ;
-    text-align: left;
-    font-size: 25px;
-    color: black;
-    border-style: solid;
-
-}
-
-
-#Text2{
-padding: 40px;
-font-family: Georgia, 'Times New Roman', Times, serif ;
-text-align: left;
-font-size: 20px;
-color: black;
-border-style: solid;
-}
-
-#Text5{
-  padding: 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif ;
-  text-align: left;
-  font-size: 15px;
-  color: grey;
-  border-style: solid;
-  border-color: black;
-  }
-#Text3{
-  padding: 40px;
-  font-family: Georgia, 'Times New Roman', Times, serif ;
-  text-align: left;
-  font-size: 20px;
-  color: black;
-  border-style: solid;
-  }
-
-#Text4{
-    padding: 40px;
-    font-family: Georgia, 'Times New Roman', Times, serif ;
-    text-align: left;
-    font-size: 20px;
-    color: black;
-    border-style: solid;
-   }
-
 
 .floatRight{float:left; border-style: solid; border-color: black;}
 
@@ -87,14 +5,13 @@ border-style: solid;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #405F71;
     float: left;
 
   }
 
 
 
- } 
+ 
 
 
 #navigation_li {
@@ -104,7 +21,7 @@ border-style: solid;
   }
 
   #navigation_li:hover {
-    background-color: #555;
+   /* background-color: #555; */
     color: white;
   }
 
@@ -137,7 +54,7 @@ border-style: solid;
     outline: none;
     color:white;
     padding: 14px 16px;
-    background-color: #222222;
+  background-color: #222222;
     font-family: inherit;
     margin: 0;
   }
