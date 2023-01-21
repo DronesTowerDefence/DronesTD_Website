@@ -20,7 +20,7 @@ if($passwort != $passwort2){
 
 $host = "localhost:3306";
 $dbname = "dronestd_account";
-$username1= "dronestd176065";
+$username1= "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
 $conn = mysqli_connect($host, $username1, $password, $dbname);
