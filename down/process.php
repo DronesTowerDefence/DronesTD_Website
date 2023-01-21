@@ -18,12 +18,12 @@ if($passwort != $passwort2){
 
 //var_dump($username, $email, $passwort, $passwort2, $check);
 
-$host = "localhost";
+$host = "localhost:3306";
 $dbname = "user_account";
 $username1= "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
-$conn = mysqli_connect($host, "l", $password, $dbname);
+$conn = mysqli_connect($host, $username1, $password, $dbname);
 
 if(mysqli_connect_errno())
 {
