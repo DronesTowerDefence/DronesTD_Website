@@ -18,9 +18,9 @@ if($passwort != $passwort2){
 
 //var_dump($username, $email, $passwort, $passwort2, $check);
 
-$host = "";
+$host = "localhost:3306";
 $dbname = "user_account";
-$username1= "db_access";
+$username1= "dronestd176065";
 $password = "aYOKWhS2lVntnAsB";
 
 $conn = mysqli_connect($host, $username1, $password, $dbname);
