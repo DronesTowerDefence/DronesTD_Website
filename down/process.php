@@ -66,4 +66,6 @@ $username, $email, $passwort);
 
 mysqli_stmt_execute($stmt);
 
-echo "Yay!;";
+echo "Ihr Account wurde erstellt!
+<br><br> Hier gehts zurück: 
+<a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>";
