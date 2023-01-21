@@ -23,7 +23,7 @@ $dbname = "user_account";
 $username1= "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
-$conn = mysqli_connect($host, "db_access", $password, $dbname);
+$conn = mysqli_connect($host, "l", $password, $dbname);
 
 if(mysqli_connect_errno())
 {
