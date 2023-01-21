@@ -19,7 +19,7 @@ if($passwort != $passwort2){
 //var_dump($username, $email, $passwort, $passwort2, $check);
 
 $host = "localhost:3306";
-$dbname = "user_account";
+$dbname = "dronestd_account";
 $username1= "dronestd176065";
 $password = "aYOKWhS2lVntnAsB";
 
