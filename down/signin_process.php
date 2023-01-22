@@ -60,7 +60,7 @@ echo "
 <script type=\"text/javascript\">
 
 localStorage.setItem('user','$encryption');
-window.open('profile.html', '_self');
+window.open('profile.php', '_self');
 
 </script>
 ";
