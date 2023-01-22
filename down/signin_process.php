@@ -59,7 +59,7 @@ $encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $en
 echo "
 <script type=\"text/javascript\">
 
-localStorage.setItem('user','$encryption');
+document.cookie = 'user=$encryption';
 window.open('profile.php', '_self');
 
 </script>
