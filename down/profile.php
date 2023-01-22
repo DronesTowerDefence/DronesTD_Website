@@ -52,20 +52,19 @@
 
 <?php
 
-setcookie("username", "John Carter", time()+30*24*60*60);
 
-echo $_COOKIE["username"];
 
-echo "before cookie ";
-echo $_COOKIE["user"] ;
-echo "after cookie ";
+$encryption = $_COOKIE["username"];
 
 $decryption_iv = '1234567891011121';
 // Entschlüsselungsschlüssel
 $decryption_key = "aylEwhyjpK2j21Ih1L";
-  
+
+$ciphering = "AES-128-CTR";
 
 $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
+
+echo $decryption;
 
 ?>
 
