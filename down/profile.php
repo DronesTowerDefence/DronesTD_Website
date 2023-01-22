@@ -52,6 +52,10 @@
 
 <?php
 
+setcookie("username", "John Carter", time()+30*24*60*60);
+
+echo $_COOKIE["username"];
+
 echo "before cookie ";
 echo $_COOKIE["user"] ;
 echo "after cookie ";
