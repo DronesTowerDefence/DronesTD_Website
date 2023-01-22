@@ -52,7 +52,7 @@
 
 <?php
 
-echo htmlspecialchars($_COOKIE["user"]) . "hi";
+echo $_COOKIE["user"] . "hi";
 
 $decryption_iv = '1234567891011121';
 // Entschlüsselungsschlüssel
