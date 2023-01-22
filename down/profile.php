@@ -37,8 +37,30 @@
       <br>
       <body>
 
-<?php 
-echo "ok";
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+echo htmlspecialchars($_COOKIE["userID"]);
+
+$decryption_iv = '1234567891011121';
+// Entschlüsselungsschlüssel
+$decryption_key = "aylEwhyjpK2j21Ih1L";
+  
+
+$decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
+
 ?>
 
 
