@@ -52,7 +52,9 @@
 
 <?php
 
-echo $_COOKIE["user"] . "hi";
+echo "before cookie ";
+echo $_COOKIE["user"] ;
+echo "after cookie ";
 
 $decryption_iv = '1234567891011121';
 // Entschlüsselungsschlüssel
