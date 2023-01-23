@@ -53,7 +53,7 @@ $encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $en
 
 echo "$encryption . '= '";
 
-$decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
+$decryption=openssl_decrypt ($encryption, $ciphering, $encryption_key, $options, $encryption_iv);
 
 echo "$decryption";
 
