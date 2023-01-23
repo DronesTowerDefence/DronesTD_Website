@@ -53,6 +53,10 @@ $encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $en
 
 echo "$encryption";
 
+$decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
+
+echo "$decryption";
+
 echo "
 <script type=\"text/javascript\">
 
