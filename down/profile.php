@@ -56,8 +56,6 @@
 
 $encryption = $_COOKIE["user"];
 
-echo $encryption;
-
 $decryption_iv = '1234567891011121';
 // Entschlüsselungsschlüssel
 $decryption_key = "aylEwhyjpK2j21Ih1L";
@@ -66,9 +64,45 @@ $ciphering = "AES-128-CTR";
 
 $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
 
-echo $decryption;
+$host = "localhost:3306";
+$dbname = "dronestd_account";
+$username1= "db_access";
+$password = "aYOKWhS2lVntnAsB";
 
-//Encryption liefert Müll, vor Cookie-Speichern ausgeben lassen bzw. Entschlüsselung ansehen
+$conn = mysqli_connect($host, $username1, $password, $dbname);
+
+if(mysqli_connect_errno())
+{
+    die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+}
+
+//Checken nach Dopplungen
+
+$sqlCheck = "SELECT username, email FROM user_account WHERE 
+email = '$decryption'";
+ 
+$result = $conn->query($sqlCheck);
+
+if ($result->num_rows == 0)
+{
+
+  die("Username schon verwendet oder die Email ist bereits mit einem Account verknüpft!
+  <br><br> Hier gehts zurück: 
+  <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+
+}
+
+$row = $result->fetch_assoc()["username"];
+
+echo "<h3> Profil <h3>
+<br> <br>
+
+<p> Nutzername: ". $row["username"] . "
+
+<br> 
+
+Email: " . $row["email"];
 
 ?>
 

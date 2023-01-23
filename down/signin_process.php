@@ -51,19 +51,12 @@ $encryption_key = "aylEwhyjpK2j21Ih1L";
 // Use openssl_encrypt() function to encrypt the data
 $encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $encryption_iv);
 
-echo "$encryption . '= '";
-
-$decryption=openssl_decrypt ($encryption, $ciphering, $encryption_key, $options, $encryption_iv);
-
-echo "$decryption";
-
 echo "
 <script type=\"text/javascript\">
 
 document.cookie = 'user=$encryption';
-
+window.open('profile.php', '_self'); 
 
 </script>
 ";
 
-  // window.open('profile.php', '_self'); 
