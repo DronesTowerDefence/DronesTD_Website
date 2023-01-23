@@ -54,7 +54,7 @@
 
 
 
-$encryption = $_COOKIE["username"];
+$encryption = $_COOKIE["user"];
 
 echo $encryption;
 
