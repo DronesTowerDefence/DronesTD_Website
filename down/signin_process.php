@@ -66,4 +66,4 @@ document.cookie = 'user=$encryption';
 </script>
 ";
 
-//window.open('profile.php', '_self');    
+  // window.open('profile.php', '_self'); 

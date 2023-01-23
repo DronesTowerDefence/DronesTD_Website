@@ -56,6 +56,8 @@
 
 $encryption = $_COOKIE["username"];
 
+echo $encryption;
+
 $decryption_iv = '1234567891011121';
 // Entschlüsselungsschlüssel
 $decryption_key = "aylEwhyjpK2j21Ih1L";
