@@ -66,6 +66,8 @@ $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options,
 
 echo $decryption;
 
+//Encryption liefert Müll, vor Cookie-Speichern ausgeben lassen bzw. Entschlüsselung ansehen
+
 ?>
 
 
