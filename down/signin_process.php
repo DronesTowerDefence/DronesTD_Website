@@ -61,9 +61,9 @@ echo "
 <script type=\"text/javascript\">
 
 document.cookie = 'user=$encryption';
-window.open('profile.php', '_self');
+
 
 </script>
 ";
 
-    
+//window.open('profile.php', '_self');    
