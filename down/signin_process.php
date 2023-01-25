@@ -42,7 +42,7 @@ $_SESSION["email"] = $email;
 $_SESSION["username"] = $row["username"];
 
 
-
+echo "thing";
 
 
 /*// Store the cipher method
