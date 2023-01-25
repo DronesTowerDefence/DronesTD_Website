@@ -41,10 +41,11 @@ if ($result->num_rows == 0){
 }
 echo "Vor fetch()";
 $row = $result->fetch_assoc()["username"];
+$username = $row["username"];
 
 echo "Username in Session schreiben";
 $_SESSION["email"] = $email;
-$_SESSION["username"] = $row["username"];
+$_SESSION["username"] = $username;
 echo "Nach Session Schriebne";
 
 echo "thing";
