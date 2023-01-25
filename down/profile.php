@@ -53,14 +53,15 @@ $ciphering = "AES-128-CTR";
 $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
 */
 
-echo "<h3> Profil <h3>
+echo "
+<h3> Profil <h3>
 <br> <br>
-
-<p> Nutzername: ". $_SESSION["username"] . "
-
+<p> Nutzername: " . $_SESSION["username"] . "
 <br> 
-
-Email: " . $_SESSION["email"];
+Email: " . $_SESSION["email"] . "
+<br> <br>
+<h2> Hier wird bald die Statsseite sein </h2>
+";
 
 ?>
 
