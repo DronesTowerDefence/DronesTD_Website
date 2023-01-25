@@ -13,7 +13,10 @@ $dbname = "dronestd_account";
 $username1= "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
+echo "Vor Connection";
 $conn = mysqli_connect($host, $username1, $password, $dbname);
+echo "Nach Connection";
+
 
 if(mysqli_connect_errno())
 {
@@ -25,8 +28,9 @@ if(mysqli_connect_errno())
 
 $sqlCheck = "SELECT username, email FROM user_account WHERE 
 email = '$email' AND passwort = '$passwort'";
- 
+echo "Vor Abfrage";
 $result = $conn->query($sqlCheck);
+echo "NAch Abfrage";
 
 if ($result->num_rows == 0){
 
@@ -35,13 +39,13 @@ if ($result->num_rows == 0){
     <a href='https://www.dronestd.de/down/sign-in.html'>-><b>Startseite</b></a></p>");
 
 }
-
+echo "Vor fetch()";
 $row = $result->fetch_assoc()["username"];
 
-
+echo "Username in Session schreiben";
 $_SESSION["email"] = $email;
 $_SESSION["username"] = $row["username"];
-
+echo "Nach Session Schriebne";
 
 echo "thing";
 
