@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $email = $_POST["email"];
 $passwort = $_POST["passwort"];
@@ -34,8 +35,17 @@ if ($result->num_rows == 0){
 
 }
 
+$row = $result->fetch_assoc()["username"];
 
-// Store the cipher method
+
+$_SESSION["email"] = $email;
+$_SESSION["username"] = $row["username"];
+
+
+
+
+
+/*// Store the cipher method
 $ciphering = "AES-128-CTR";
   
 // Use OpenSSl Encryption method
@@ -50,11 +60,11 @@ $encryption_key = "aylEwhyjpK2j21Ih1L";
   
 // Use openssl_encrypt() function to encrypt the data
 $encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $encryption_iv);
+*/
 
 echo "
 <script type=\"text/javascript\">
 
-document.cookie = 'user=$encryption';
 window.open('profile.php', '_self'); 
 
 </script>
