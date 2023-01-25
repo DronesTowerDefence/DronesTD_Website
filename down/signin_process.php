@@ -30,6 +30,7 @@ $sqlCheck = "SELECT username, email FROM user_account WHERE
 email = '$email' AND passwort = '$passwort'";
 echo "Vor Abfrage";
 $result = $conn->query($sqlCheck);
+
 echo "NAch Abfrage";
 
 if ($result->num_rows == 0){
@@ -40,7 +41,7 @@ if ($result->num_rows == 0){
 
 }
 echo "Vor fetch()";
-$row = $result->fetch_assoc()["username"];
+$row = $result->fetch_assoc();
 $username = $row["username"];
 
 echo "Username in Session schreiben";
