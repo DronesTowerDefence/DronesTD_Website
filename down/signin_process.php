@@ -1,6 +1,7 @@
 <?php
-
+echo "Vor Session<br>";
 session_start();
+echo "Nach Session";
 
 $email = $_POST["email"];
 $passwort = $_POST["passwort"];
