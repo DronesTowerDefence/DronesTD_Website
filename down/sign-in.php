@@ -13,6 +13,21 @@
     <title>Anmelden</title>
   </head>
 
+<?php
+
+session_start();
+if($_SESSION["loggedin"]==1){
+echo "
+<script type=\'text/javascript\'>
+
+window.open('profile.php', '_self'); 
+
+</script>
+";
+}
+
+?>
+
   <body>
 
     <h1>
