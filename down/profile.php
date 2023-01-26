@@ -66,13 +66,13 @@ if($_SESSION["loggedin"]==0){
 
 
 echo "
-<h3> Profil </h3>
-<br> <br>
+<h1> Profil </h1>
+<br> 
 <p> Nutzername: " . $_SESSION["username"] . "
 <br> 
 Email: " . $_SESSION["email"] . "
-<p> <br> <br>
-<h2> Hier wird bald die Statsseite sein </h2>
+<p> <br> 
+<h2> Hier wird bald die Stats-Seite sein </h2>
 ";
 
 ?>
@@ -83,7 +83,7 @@ Email: " . $_SESSION["email"] . "
 <input type='checkbox' name='check' required>
 Wirklich abmelden?
 </label>
-
+<br>
 <button>Abmelden</button>
 </form>
 
