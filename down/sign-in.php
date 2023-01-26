@@ -68,7 +68,7 @@ if($_SESSION["loggedin"]=="1"){
             placeholder="Max. max@mustermann.de" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
   
             <label for="passwort">Passwort:</label>
-          <input type="text" id="passwort" name="passwort" required maxlength="18"
+          <input type="password" id="passwort" name="passwort" required maxlength="18"
           placeholder="">
         
 
