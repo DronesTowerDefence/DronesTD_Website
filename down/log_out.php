@@ -18,3 +18,11 @@ echo $_SESSION["username"];
 if($_SESSION["username"]==null){
     echo "null";
 }
+
+session_unset["username"];
+
+if($_SESSION["username"]==null){
+    echo "null";
+}
+
+echo $_SESSION["username"];
