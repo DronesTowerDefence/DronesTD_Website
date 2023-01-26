@@ -63,20 +63,20 @@ Email: " . $_SESSION["email"] . "
 <h2> Hier wird bald die Statsseite sein </h2>
 ";
 
-?>
 
 
-<form action="log_out.php" method="post">
+echo "
+<form action='log_out.php' method='post'>
 <br>
 <label>
-<input type="checkbox" name="check" required>
+<input type='checkbox' name='check' required>
 Wirklich abmelden?
 </label>
 
 <button>Abmelden</button>
 </form>
 
-
+";
 
 
 
@@ -88,3 +88,5 @@ Wirklich abmelden?
 
 </body>
 </html>
+
+?>
