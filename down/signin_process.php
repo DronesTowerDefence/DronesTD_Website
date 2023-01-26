@@ -49,7 +49,7 @@ if ($result->num_rows == 0){
 
     die("Anmeldedaten sind falsch!
     <br><br> Hier gehts zurück: 
-    <a href='https://www.dronestd.de/down/sign-in.html'>-><b>Startseite</b></a></p>");
+    <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
 
 }
 
