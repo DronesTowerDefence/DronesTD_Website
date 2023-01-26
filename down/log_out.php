@@ -9,13 +9,12 @@ if (!$check){
     die("Bitte Hacken für Abmelden setzen");
 }
 
-echo $_SESSION["username"];
-
 session_unset();
 
-echo $_SESSION["username"];
+echo "
+<script type=\"text/javascript\">
 
-if($_SESSION["username"]==null){
-    echo "null";
-}
+window.open('../index.html', '_self'); 
 
+</script>
+";
