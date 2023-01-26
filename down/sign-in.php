@@ -65,7 +65,7 @@ if($_SESSION["loggedin"]=="1"){
         <form action="signin_process.php" method="post">
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" required maxlength="50"
-            placeholder="Max. max@mustermann.de" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            placeholder="max@mustermann.de" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
   
             <label for="passwort">Passwort:</label>
           <input type="password" id="passwort" name="passwort" required maxlength="18"
