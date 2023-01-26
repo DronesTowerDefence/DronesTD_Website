@@ -16,15 +16,19 @@
 <?php
 
 session_start();
-if($_SESSION["loggedin"]==1){
-echo "
-<script type=\'text/javascript\'>
 
-window.open('profile.php', '_self'); 
+if($_SESSION["loggedin"]=="1"){
 
-</script>
-";
-}
+  echo "
+  <script type=\'text/javascript\'>
+  
+  window.open('profile.php', '_self'); 
+  
+  </script>
+  ";
+  
+  }
+
 
 ?>
 
