@@ -9,7 +9,10 @@ if (!$check){
     die("Bitte Hacken für Abmelden setzen");
 }
 
-session_unset();
+$_SESSION["loggedin"] = 0;
+unset($_SESSION["username"]);
+unset($_SESSION["email"]);
+
 
 echo "
 <script type=\"text/javascript\">

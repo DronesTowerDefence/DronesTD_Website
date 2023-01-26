@@ -2,6 +2,18 @@
 
 session_start();
 
+if($_SESSION["loggedin"]=="1"){
+
+    echo "
+<script type=\"text/javascript\">
+
+window.open('profile.php', '_self'); 
+
+</script>
+";
+
+}
+
 
 $email = $_POST["email"];
 $passwort = $_POST["passwort"];
@@ -47,6 +59,7 @@ $username = $row["username"];
 
 $_SESSION["email"] = $email;
 $_SESSION["username"] = $username;
+$_SESSION["loggedin"] = 1;
 
 
 /*// Store the cipher method

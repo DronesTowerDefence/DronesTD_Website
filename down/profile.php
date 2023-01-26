@@ -53,6 +53,18 @@ $ciphering = "AES-128-CTR";
 $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
 */
 
+if($_SESSION["loggedin"]==0){
+
+  die("Sie sind nicht angemeldet. <br> <br>
+  <a href='https://www.dronestd.de/down/sign-in.html'>-><b>Startseite</b></a></p>");
+
+}
+
+
+
+
+
+
 echo "
 <h3> Profil </h3>
 <br> <br>
