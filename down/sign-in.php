@@ -17,9 +17,11 @@
 
 session_start();
 
+echo "nach Session-Start";
+
 if($_SESSION["loggedin"]=="1"){
 
-  echo "
+  echo " hello <br>
   <script type=\'text/javascript\'>
   
   window.open('profile.php', '_self'); 
