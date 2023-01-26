@@ -5,7 +5,7 @@ session_start();
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
 
 
-if (!$check){
+if (!$check) {
     die("Bitte Hacken für Abmelden setzen");
 }
 

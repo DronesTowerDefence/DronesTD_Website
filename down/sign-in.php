@@ -1,17 +1,15 @@
 <!doctype html>
 <html id="html" lang="de" class=dn>
 
-  <head>
-    <link rel="icon" href="img/icon.png">
-    <meta charset="utf-8">
-    <link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    <link rel="stylesheet" href="../stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/ae32d225a7.js"
-      crossorigin="anonymous"></script>
-    <title>Anmelden</title>
-  </head>
+<head>
+  <link rel="icon" href="img/icon.png">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  <link rel="stylesheet" href="../stylesheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ae32d225a7.js" crossorigin="anonymous"></script>
+  <title>Anmelden</title>
+</head>
 
 <?php
 
@@ -19,7 +17,7 @@ session_start();
 
 
 
-if($_SESSION["loggedin"]=="1"){
+if ($_SESSION["loggedin"] == "1") {
 
   echo " 
   <script type=\"text/javascript\">
@@ -28,61 +26,60 @@ if($_SESSION["loggedin"]=="1"){
   
   </script>
   ";
-  
-  }
+
+}
 
 
 ?>
 
-  <body>
+<body>
 
-    <h1>
-      <b>Drones TD</b>
-    </h1>
+  <h1>
+    <b>Drones TD</b>
+  </h1>
 
 
-    <p>Dronenspaß für den Single- und Multiplayer!</p>
+  <p>Dronenspaß für den Single- und Multiplayer!</p>
+
+  <br>
+  <hr>
+
+
+
+  <div class="navbar">
+    <a href="../index.html" style="background-color: #222222;"><i class="fa
+          fa-home" aria-hidden="true"></i> &nbsp; Home</a>
+  </div>
+  <br>
+
+
+
+  <p>
+
+
+  <h3>Anmelden:</h3>
+  <br>
+
+  <form action="signin_process.php" method="post">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required maxlength="50" placeholder="max@mustermann.de"
+      pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+    <label for="passwort">Passwort:</label>
+    <input type="password" id="passwort" name="passwort" required maxlength="18" placeholder="">
+
 
     <br>
-    <hr>
 
+    <button>Senden</button>
+  </form>
 
+  </p>
+</body>
 
-    <div class="navbar">
-      <a href="../index.html" style="background-color: #222222;"><i class="fa
-          fa-home" aria-hidden="true"></i> &nbsp; Home</a>
-    </div>
-      <br>
-      
-        
-         
-        <p>
-        
-        
-        <h3>Anmelden:</h3>
-        <br>
+<br>
 
-        <form action="signin_process.php" method="post">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required maxlength="50"
-            placeholder="max@mustermann.de" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-  
-            <label for="passwort">Passwort:</label>
-          <input type="password" id="passwort" name="passwort" required maxlength="18"
-          placeholder="">
-        
+<h3>Noch keinen Account? | <i>Erstell ihn hier:</i></h3>
+<h2><a href="registration.html">Registrieren</a></h2>
 
-        <br>
-
-        <button>Senden</button>
-        </form>
-
-        </p>
-    </body>
-
-    <br> 
-
-    <h3>Noch keinen Account? | <i>Erstell ihn hier:</i></h3> 
-    <h2><a href = "registration.html">Registrieren</a></h2>
-
-    </html>
+</html>
