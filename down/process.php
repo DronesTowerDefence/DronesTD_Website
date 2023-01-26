@@ -109,6 +109,13 @@ mysqli_stmt_bind_param(
 
 mysqli_stmt_execute($stmt);
 
+$msg = "Ihr Account bei https://www.dronestd.de wurde erstellt! \n\n Sie können sich nun anmelden, etc.";
+
+$msg = wordwrap($msg, 70);
+
+mail($email, "Account Erstellt!",$msg);
+
 echo "Ihr Account wurde erstellt!
 <br><br> Hier gehts zurück: 
 <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>";
+
