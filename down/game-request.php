@@ -1,8 +1,15 @@
 <?php
 
 
-
 $emailpasswort = $_POST["email/passwort"];
+
+$headers = apache_request_headers();
+
+echo $headers;
+
+foreach ($headers as $header => $value) {
+    echo "$header: $value <br />\n";
+}
 
 
 $hexKey = 0x2FD;
