@@ -1,24 +1,35 @@
 <?php
 
+$host = "127.0.0.1";
+$port = 5353;
+set_time_limit(0);
 
+$socket = socket_create(AF_INET, SOCK_STREAM, 0);
 
-$emailpasswort = $_POST["email/passwort"];
-
-echo "ok";
-
-$hexKey = 0x2FD;
-
-
-$email = substr($emailpasswort, 0, strpos($emailpasswort, "&"));
-$passwort =substr($emailpasswort, strpos($emailpasswort, "&"));
-
-$newPasswort = "";
-
-for ($i = 0; $i <= strlen($passwort); $i++){
-
-    $newPasswort[$i] = $passwort[$i] ^ $hexKey;
-
+if(socket_clear_error()){
+    echo "Kaputt";
 }
+
+//Binden von Socket an Port
+$result = socket_bind($socket, $host, $port);
+
+//Wartet auf die Connection
+$result = socket_listen($socket, 3);
+
+$spawn = socket_accept($socket);
+
+
+$input = socket_read($spawn, 1024);
+
+//rÜCKSENDUNG
+$nachricht = "ok";
+
+socket_write($spawn, $ok, strlen(2));
+
+//CLOSE
+socket_close($spawn);
+socket_close($socket);
+
 
 //db connection
 $host = "localhost:3306";
@@ -36,7 +47,7 @@ if (mysqli_connect_errno()) {
 //Checken nach Dopplungen
 
 $sqlCheck = "SELECT username, email FROM user_account WHERE 
-email = '$email' OR username = '$username'";
+email = '' AND username = ''";
 
 $result = $conn->query($sqlCheck);
 
