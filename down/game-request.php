@@ -18,6 +18,7 @@ for ($i = 0; $i <= strlen($passwort); $i++){
     $newPasswort[$i] = $passwort[$i] ^ $hexKey;
 
 }
+echo $emailpasswort;
 
 echo $email . $newPasswort;
 
