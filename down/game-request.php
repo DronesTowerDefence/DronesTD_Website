@@ -4,7 +4,6 @@
 
 $emailpasswort = $_POST["email/passwort"];
 
-echo "ok";
 
 $hexKey = 0x2FD;
 
@@ -19,6 +18,8 @@ for ($i = 0; $i <= strlen($passwort); $i++){
     $newPasswort[$i] = $passwort[$i] ^ $hexKey;
 
 }
+
+echo $email . $newPasswort;
 
 //db connection
 $host = "localhost:3306";
