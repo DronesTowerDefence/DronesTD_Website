@@ -4,7 +4,6 @@
 <head>
   <link rel="icon" href="img/icon.png">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ae32d225a7.js" crossorigin="anonymous"></script>
