@@ -86,6 +86,16 @@ Email: " . $_SESSION["email"] . "
     </form>
 
 
+    <form action='deleteAcc.php' method='post'>
+      <br>
+      <label>
+        <input type='checkbox' name='check'>
+        Wirklich irreversibel löschen?
+      </label>
+      <br>
+      <button><p style="color: red">LÖSCHEN</button>
+    </form>
+
 
 
 
