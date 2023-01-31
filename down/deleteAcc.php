@@ -32,9 +32,17 @@ $sqlCheck = "DELETE FROM user_account WHERE email = $delEmail";
 
 $result = $conn->query($sqlCheck);
 
+
+
 echo $result;
 print_r($result);
 var_dump($result);
+
+$_SESSION["loggedin"] = 0;
+unset($_SESSION["username"]);
+unset($_SESSION["email"]);
+
+
 /*echo "
 <script type=\"text/javascript\">
 
