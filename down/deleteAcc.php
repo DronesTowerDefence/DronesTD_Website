@@ -26,7 +26,7 @@ if (mysqli_connect_errno()) {
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-$delEmail = $_SESSION["email"];
+$delEmail = $_SESSION["username"];
 
 $sqlCheck = "DELETE FROM user_account WHERE email = $delEmail";
 
