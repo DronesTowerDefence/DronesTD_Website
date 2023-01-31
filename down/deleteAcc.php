@@ -26,17 +26,19 @@ if (mysqli_connect_errno()) {
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-$delEmail = $_SESSION["username"];
+$delEmail = $_SESSION["email"];
 
-$sqlCheck = "DELETE FROM user_account WHERE email = $delEmail";
+$sql = "DELETE FROM user_account WHERE email=$delEmail";
 
-$result = $conn->query($sqlCheck);
+if ($conn->query($sql) === TRUE) {
+  echo "Account gelöscht";
+} else {
+  echo "Kapputt: " . $conn->error;
+}
+
+$conn->close();
 
 
-
-echo $result;
-print_r($result);
-var_dump($result);
 
 $_SESSION["loggedin"] = 0;
 unset($_SESSION["username"]);

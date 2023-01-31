@@ -80,6 +80,7 @@ if ($result->num_rows > 0) {
     die("Username schon verwendet oder die Email ist bereits mit einem Account verknüpft!
     <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+    
 
 }
 
@@ -115,6 +116,9 @@ $msg = wordwrap($msg, 70);
 mail($email, "Account Erstellt!",$msg);
 
 echo "Ihr Account wurde erstellt!
-<br><br> Hier gehts zurück: 
-<a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>";
+<br><br> Hier gehts zur Anmeldung: 
+<a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>";
+
+
+$conn->close();
 
