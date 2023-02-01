@@ -16,12 +16,13 @@ if(isset($_POST["submit"])) {
     $uploadOk = 0;
   }
 }
-
+/*
 // Größe des Bilds                    in Byte 
 if ($_FILES["fileToUpload"]["size"] > 500000) {
   echo "Bild ist größer als 500KB";
   $uploadOk = 0;
 }
+*/
 
 //Bildformate :)
 /*if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
