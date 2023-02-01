@@ -24,11 +24,11 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 
 //Bildformate :)
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+/*if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
   echo "Nur JPG, JPEG, PNG & GIF files sind erlaubt.";
   $uploadOk = 0;
-}
+}*/
 
 // Falls obigen Abfragen null sind.
 if ($uploadOk == 0) {
