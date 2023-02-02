@@ -95,6 +95,10 @@ Email: <code>" . $_SESSION["email"] . "</code>
   <br>
   <br>
   <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
     <form action='log_out.php' method='post'>
       <br>
@@ -118,7 +122,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
     </form>
 
     <br>
-    <br>
+   
 
 <!--<div id = rechts style="float:right;">
   <h1> Noch nicht benutzen! </h1>
