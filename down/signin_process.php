@@ -78,5 +78,7 @@ window.open('profile.php', '_self');
 </script>
 ";
 
+$conn->close();
+
 ?>
 <!-- #endregion -->

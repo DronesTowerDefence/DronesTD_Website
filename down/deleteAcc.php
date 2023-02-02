@@ -31,7 +31,13 @@ $delEmail = $_SESSION["email"];
 $sql = "DELETE FROM user_account WHERE email = '$delEmail'";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Account gelöscht";
+  echo "
+  <script type=\"text/javascript\">
+  
+  window.open('../index.html', '_self'); 
+  
+  </script>
+  ";
 } else {
   echo "Kapputt: " . $conn->error;
 }
@@ -52,5 +58,7 @@ window.open('../index.html', '_self');
 
 </script>
 ";*/
+
+$conn->close();
 
 ?>

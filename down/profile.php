@@ -71,9 +71,9 @@ Email: " . $_SESSION["email"] . "
 <p> <br> 
 <h2> Hier wird bald die Stats-Seite sein </h2>
 ";
-
-    ?>
-    <!-- #endregion -->
+?>
+ 
+ <img src="../img/noPFP.png" alt="No Profile Picture" style="float:right;width:500px;height:500px;">
 
     <form action='log_out.php' method='post'>
       <br>
