@@ -58,9 +58,9 @@
     }
 
 ?>
-
-<h1> Profil </h1> 
 <img src="../img/noPFP.png" alt="No Profile Picture" style="float:right;width:250px;height:250px;">
+<h1> Profil </h1> 
+
 
 <?php
   
