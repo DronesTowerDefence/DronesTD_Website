@@ -110,7 +110,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
     <form action='deleteAcc.php' method='post'>
       <br>
       <label>
-        <input type='checkbox' name='check'>
+        <input type='checkbox' name='check' required>
         Wirklich irreversibel löschen?
       </label>
       &emsp;
