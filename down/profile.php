@@ -70,7 +70,8 @@ Nutzername: <code>" . $_SESSION["username"] . " </code>
 <br> 
 Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
-<h2> Hier wird bald die Stats-Seite sein </h2>
+<br>
+<h2> Hier werden bald die Statistiken angezeigt!</h2>
 ";
 ?>
  
