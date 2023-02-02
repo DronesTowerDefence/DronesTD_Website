@@ -28,7 +28,7 @@ if (mysqli_connect_errno()) {
 
 $delEmail = $_SESSION["email"];
 
-$sql = "DELETE FROM user_account WHERE email=$delEmail";
+$sql = "DELETE FROM user_account WHERE email = '$delEmail'";
 
 if ($conn->query($sql) === TRUE) {
   echo "Account gelöscht";
