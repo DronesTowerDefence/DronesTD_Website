@@ -93,6 +93,8 @@ Email: <code>" . $_SESSION["email"] . "</code>
   </div>
 
   <br>
+  <br>
+  <br>
 
     <form action='log_out.php' method='post'>
       <br>
