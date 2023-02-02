@@ -9,10 +9,10 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   if($check !== false) {
-    echo "Datei ist ein Bild - " . $check["mime"] . ".";
+    
     $uploadOk = 1;
   } else {
-    echo "Datei ist kein Bild";
+    
     $uploadOk = 0;
   }
 }
@@ -33,13 +33,18 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 
 // Falls obigen Abfragen null sind.
 if ($uploadOk == 0) {
-  echo "Die Datei wurde nicht hochgeladen.";
+  echo "Die Datei wurde nicht hochgeladen. 
+  <br><br> Hier gehts zum Profil zurück: 
+  <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>";
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen."; //Special Char wegen Endungen und eventuellen Sonerzeichen
+    echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen. <br><br> Hier gehts zum Profil zurück: 
+    <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>"; //Special Char wegen Endungen und eventuellen Sonerzeichen
   } else {
-    echo "Die Datei wurde nicht hochgeladen.";
+    echo "Die Datei wurde nicht hochgeladen. 
+    <br><br> Hier gehts zum Profil zurück: 
+    <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>";
   }
 }
 ?>
