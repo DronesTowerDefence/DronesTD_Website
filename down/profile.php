@@ -99,10 +99,10 @@ Email: " . $_SESSION["email"] . "
     <br>
     <br>
 
-    
+    <h1> Noch nicht benutzen! </h1>
 
   <form action="upload.php" method="post" enctype="multipart/form-data">
-  Select image to upload:
+  Profilbild auswählen: (unter 500KB)
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
   </form>
