@@ -74,6 +74,10 @@ Email: " . $_SESSION["email"] . "
 ";
 ?>
  
+<br>
+<br>
+<br>
+<br>
 
 
     <form action='log_out.php' method='post'>
@@ -82,8 +86,8 @@ Email: " . $_SESSION["email"] . "
         <input type='checkbox' name='check' required>
         Wirklich abmelden?
       </label>
-      <br>
-      <button>Abmelden</button>
+      &emsp;
+      <button><p style="color: red">Abmelden</button>
     </form>
 
 
@@ -93,7 +97,7 @@ Email: " . $_SESSION["email"] . "
         <input type='checkbox' name='check'>
         Wirklich irreversibel löschen?
       </label>
-      <br>
+      &emsp;
       <button><p style="color: red">LÖSCHEN</button>
     </form>
 
