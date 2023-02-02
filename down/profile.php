@@ -80,7 +80,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <br>
 <br>
 <br>
-<br>
+
 
 
 
@@ -93,6 +93,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
   </form>
   </div>
 
+  
   <br>
   <br>
   <br>
