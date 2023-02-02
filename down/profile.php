@@ -78,6 +78,18 @@ Email: " . $_SESSION["email"] . "
 <br>
 <br>
 <br>
+<br>
+<br>
+
+
+<div id = rechts style="float:right;">
+  <h1> Noch nicht benutzen! </h1>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+  Profilbild auswählen: (unter 500KB)
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+  </form>
+  </div>
 
 
     <form action='log_out.php' method='post'>
@@ -98,22 +110,21 @@ Email: " . $_SESSION["email"] . "
         Wirklich irreversibel löschen?
       </label>
       &emsp;
-      <button><p style="color: red">LÖSCHEN</button>
+      <button><p style="color: red">Löschen</button>
     </form>
 
     <br>
     <br>
 
-    <h1> Noch nicht benutzen! </h1>
-
+<!--<div id = rechts style="float:right;">
+  <h1> Noch nicht benutzen! </h1>
   <form action="upload.php" method="post" enctype="multipart/form-data">
   Profilbild auswählen: (unter 500KB)
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
   </form>
-
-
-
+  </div>
+  -->
 
 
 
