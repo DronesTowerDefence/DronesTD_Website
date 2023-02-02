@@ -87,7 +87,8 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <div id = rechts style="float:right;">
   <h1> Noch nicht benutzen! </h1>
   <form action="upload.php" method="post" enctype="multipart/form-data">
-  Profilbild auswählen: (unter 500KB)
+  Profilbild auswählen: (unter 500KB) <br>
+  Nur JPG, JPEG, PNG & GIF files sind erlaubt.
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
   </form>
