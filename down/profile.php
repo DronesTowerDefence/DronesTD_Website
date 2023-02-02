@@ -66,9 +66,9 @@
   
 echo "
 <br> 
-<p> Nutzername: " . $_SESSION["username"] . "
+<p> Nutzername: <code>" . $_SESSION["username"] . " </code>
 <br> 
-Email: " . $_SESSION["email"] . "
+Email: <code>" . $_SESSION["email"] . "</code>
 <p> <br> 
 <h2> Hier wird bald die Stats-Seite sein </h2>
 ";
