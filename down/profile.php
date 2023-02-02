@@ -79,7 +79,7 @@ Email: " . $_SESSION["email"] . "
 <br>
 <br>
 <br>
-<br>
+
 
 
 <div id = rechts style="float:right;">
@@ -91,6 +91,7 @@ Email: " . $_SESSION["email"] . "
   </form>
   </div>
 
+  <br>
 
     <form action='log_out.php' method='post'>
       <br>
