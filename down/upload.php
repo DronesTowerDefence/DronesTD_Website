@@ -2,6 +2,7 @@
 <?php
 session_start();
 $temp1 = $_SESSION["username"];
+mkdir("uploads/". $temp1 ."", 0700);
 
 $target_dir = "uploads/" . $temp1	. "/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
