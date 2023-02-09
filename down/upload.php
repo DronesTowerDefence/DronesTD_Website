@@ -34,7 +34,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
   echo "Nur JPG, JPEG, PNG & GIF files sind erlaubt.";
   $uploadOk = 0;
 }
-
+echo $_FILES["tmp_name"];
 // Falls obigen Abfragen null sind.
 if ($uploadOk == 0) {
   echo " Die Datei wurde nicht hochgeladen. 
