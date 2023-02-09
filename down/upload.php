@@ -1,10 +1,10 @@
 
 <?php
 session_start();
-$temp1 = $_SESSION["username"];
-mkdir("uploads/". $temp1 ."", 0700);
+//$temp1 = $_SESSION["username"];
+//mkdir("uploads/". $temp1 ."", 0700);
 
-$target_dir = "uploads/" . $temp1	. "/";
+$target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
