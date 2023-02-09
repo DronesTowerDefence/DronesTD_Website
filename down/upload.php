@@ -38,7 +38,7 @@ $temp = explode(".", $_FILES["file"]["name"]);
 $newfilename = $_SESSION["username"]  . '.' . end($temp);
 // Falls obigen Abfragen null sind.
 if ($uploadOk == 0) {
-  echo " Die Datei wurde nicht hochgeladen. 
+  echo " Die Datei wurde nicht hochgeladen, Bed. nicht erfüllt
   <br><br> Hier gehts zum Profil zurück: 
   <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>";
 // if everything is ok, try to upload file
