@@ -43,7 +43,7 @@ if ($uploadOk == 0) {
   <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>";
 // if everything is ok, try to upload file
 } else {
-  if (move_uploaded_file($_FILES["file"]["tmp_name"], "../img/imageDirectory/" . $newfilename)) {
+  if (move_uploaded_file($_FILES["file"]["tmp_name"], $newfilename)) {
     echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen. <br><br> Hier gehts zum Profil zurück: 
     <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>"; //Special Char wegen Endungen und eventuellen Sonerzeichen
   } else {
