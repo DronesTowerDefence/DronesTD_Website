@@ -57,12 +57,12 @@
 
     }
 
-?>
-
-<h1> Profil <img src="../img/noPFP.png" alt="No Profile Picture" style="float:right;width:250px;height:250px;"></h1> 
 
 
-<?php
+echo "<h1> Profil <img src="/uploads/" . $_SESSION["username"] . ".* alt="Profile Picture" style="float:right;width:250px;height:250px;"></h1> ";
+
+
+
   
 echo "
 <br> 
