@@ -59,7 +59,7 @@
 
 
 
-echo "<h1> Profil <img src='/uploads/";
+echo "<h1> Profil <img src='uploads/";
 
 echo $_SESSION["username"];
 
