@@ -6,7 +6,7 @@ mkdir("uploads/". $temp1 ."", 0700);*/
 $temp = explode(".", $_FILES["file"]["name"]);
 $newfilename = $_SESSION["username"]  . '.' . end($temp);
 //
-$target_dir = "../../../dronesClient.DronesTD.de/";
+$target_dir = "../../dronesClient.DronesTD.de/";
 $target_file1 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 $target_file = $target_dir . $newfilename . $imageFileType;
