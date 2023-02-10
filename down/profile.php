@@ -34,7 +34,7 @@
   </div>
   <br>
 
-  <body>
+  <br>
 <!-- #endregion -->
 <!-- #region PHP-->
     <?php
