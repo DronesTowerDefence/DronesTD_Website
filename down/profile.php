@@ -34,7 +34,6 @@
   </div>
   <br>
 
-  <br>
 <!-- #endregion -->
 <!-- #region PHP-->
     <?php
@@ -59,11 +58,11 @@
 
 
 
-echo "<h1> Profil <img src='uploads/";
+echo "<h1> Profil </h1> <img src='uploads/";
 
 echo $_SESSION["username"];
 
-echo ".png' style='float:right;width:250px;height:250px;></h1> '";
+echo ".png' style='float:right;width:250px;height:250px;> '";
 
 
 
@@ -92,7 +91,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
   <h1> Noch nicht benutzen! </h1>
   <form action="upload.php" method="post" enctype="multipart/form-data">
   Profilbild auswählen: (unter 500KB) <br>
-  Nur JPG, JPEG, PNG & GIF files sind erlaubt.
+  Nur PNG!!!
   <input type="file" name="fileToUpload" id="fileToUpload">
   <input type="submit" value="Upload Image" name="submit">
   </form>
