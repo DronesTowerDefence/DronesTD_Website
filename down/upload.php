@@ -7,9 +7,11 @@ $temp = explode(".", $_FILES["file"]["name"]);
 $newfilename = $_SESSION["username"]  . '.' . end($temp);
 //
 $target_dir = "uploads/";
-$target_file = $target_dir . $newfilename;
+$target_file1 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
+$target_file = $target_dir . $newfilename . $imageFileType;
 $uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
 
 // Bild?
 if(isset($_POST["submit"])) {
