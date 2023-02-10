@@ -58,10 +58,8 @@
 
 
 
-echo "<h1> Profil </h1> <img src='uploads/";
-
+echo "<h1> Profil </h1> <img src='../../dronesClient.DronesTD.de/"; 
 echo $_SESSION["username"];
-
 echo ".png' style='float:right;width:250px;height:250px;> '";
 
 

@@ -13,6 +13,7 @@ $target_file = $target_dir . $newfilename . $imageFileType;
 $uploadOk = 1;
 
 
+
 // Bild?
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
