@@ -81,4 +81,14 @@ if ($_SESSION["loggedin"] == "1") {
 <h3>Noch keinen Account? | <i>Erstell ihn hier:</i></h3>
 <h2><a href="registration.html">Registrieren</a></h2>
 
+<form action='changePass.php' method='post'>
+      <br>
+      <label>
+        <input type='checkbox' name='check' required>
+        Nicht Benutzen. Danke.
+      </label>
+      &emsp;
+      <button><p style="color: red">TEST</button>
+    </form>
+
 </html>
