@@ -1,42 +1,39 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
 
 session_start();
 
 
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
 
-/*$to      = 'scheunerttim@gmail.com';
-$subject = 'Betreff';
-$message = 'Nahcricht.';
-$headers = 'From: webmaster@example.com'       . "\r\n" .
-             'Reply-To: webmaster@example.com' . "\r\n" .
-             'X-Mailer: PHP/' . phpversion();
 
-mail($to, $subject, $message, $headers);
-*/
+// PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\Exception;
+// Base files 
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+// create object of PHPMailer class with boolean parameter which sets/unsets exception.
+$mail = new PHPMailer(true);                              
+try {
+    $mail->isSMTP(); // using SMTP protocol                                     
+    $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
+    $mail->SMTPAuth = true;  // enable smtp authentication                             
+    $mail->Username = 'sender@gmail.com';  // sender gmail host              
+    $mail->Password = 'password'; // sender gmail host password                          
+    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
+    $mail->Port = 587;   // port for SMTP     
 
-$mail = new PHPMailer;
+    $mail->setFrom('dronestd176065@web10925.cweb05.gamingcontrol.de', "Drones"); // sender's email and name
+    $mail->addAddress('scheunerttim@gmail.com', "Tim");  // receiver's email and name
 
-$mail->From = 'dronestd176065@web10925.cweb05.gamingcontrol.de';
-$mail->FromName = 'Drones';
-$mail->addAddress('scheunerttim@gmail.com');               // Name is optional
+    $mail->Subject = 'Test subject';
+    $mail->Body    = 'Test body';
 
-
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Here is the subject';
-$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-if(!$mail->send()) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
+    $mail->send();
     echo 'Message has been sent';
+} catch (Exception $e) { // handle error.
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
 
 
