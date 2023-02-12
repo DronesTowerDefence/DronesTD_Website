@@ -20,8 +20,7 @@ try {
     $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
     $mail->SMTPAuth = true;  // enable smtp authentication                             
     $mail->Username = 'scheunerttim@gmail.com';  // sender gmail host              
-    $mail->Password = 'TimDavid1005'; // sender gmail host password                          
-    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
+    $mail->Password = 'TimDavid1005'; // sender gmail host password                                            
     $mail->Port = 587;   // port for SMTP     
 
     $mail->setFrom('dronestd176065@web10925.cweb05.gamingcontrol.de', "Drones"); // sender's email and name
