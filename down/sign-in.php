@@ -15,7 +15,7 @@
 session_start();
 
 
-
+//Weiterleitung wenn eingeloggt
 if ($_SESSION["loggedin"] == "1") {
 
   echo " 
@@ -62,7 +62,7 @@ if ($_SESSION["loggedin"] == "1") {
   <form action="signin_process.php" method="post">
     <label for="email">Email:</label>
     <input type="text" id="email" name="email" required maxlength="50" placeholder="max@mustermann.de"
-      pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> <!--Beschränkung des Email Formats (DANKE INTERNET)-->
 
     <label for="passwort">Passwort:</label>
     <input type="password" id="passwort" name="passwort" required maxlength="18" placeholder="">
@@ -80,15 +80,6 @@ if ($_SESSION["loggedin"] == "1") {
 
 <h3>Noch keinen Account? | <i>Erstell ihn hier:</i></h3>
 <h2><a href="registration.html">Registrieren</a></h2>
-
-<form action='changePass.php' method='post'>
-      <br>
-      <label>
-        <input type='checkbox' name='check' required>
-        Nicht Benutzen. Danke.
-      </label>
-      &emsp;
-      <button><p style="color: red">TEST</button>
-    </form>
+<!--Weiterleitung an Regristrieren PHP-->
 
 </html>

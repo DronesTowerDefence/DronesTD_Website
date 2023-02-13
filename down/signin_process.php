@@ -4,9 +4,6 @@
 
 session_start();
 
-
-
-
 $email = $_POST["email"];
 $passwort = $_POST["passwort"];
 
@@ -17,7 +14,7 @@ $dbname = "dronestd_account";
 $username1 = "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
-
+//Connection wird gespeichert
 $conn = mysqli_connect($host, $username1, $password, $dbname);
 
 
@@ -27,7 +24,7 @@ if (mysqli_connect_errno()) {
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-//Checken nach Dopplungen
+//Checkt nach eingegebene AnmeldeDaten
 
 $sqlCheck = "SELECT username, email FROM user_account WHERE 
 email = '$email' AND passwort = '$passwort'";
@@ -35,7 +32,7 @@ email = '$email' AND passwort = '$passwort'";
 $result = $conn->query($sqlCheck);
 
 
-
+//Wenn keine Ergebnisse, Anmeldedaten falsch
 if ($result->num_rows == 0) {
 
     die("Anmeldedaten sind falsch!
@@ -44,32 +41,21 @@ if ($result->num_rows == 0) {
 
 }
 
+//fetch_assoc übergibt die erste Spalte.(in einer Forshcleife geht es automatisch zur nächsten Spalte bei jedem Aufruf,
+//aber da wir nur einen User mit den Daten haben, gibt es nur einen Aufruf)
+//Nun können wir mit nennen des Attributnamen der DB den Inhalt in $row zwischenspeichern
+
 $row = $result->fetch_assoc();
 $username = $row["username"];
 
+//Sessions werden gesetzt für einfache Verwendung in Zukunft, (damit nicht auf jeder Seite eine sql-Abfrage gemacht werden muss)
 
 $_SESSION["email"] = $email;
 $_SESSION["username"] = $username;
-$_SESSION["loggedin"] = 1;
+$_SESSION["loggedin"] = 1; //eingeloggt-Status
 
 
-/*// Store the cipher method
-$ciphering = "AES-128-CTR";
-
-// Use OpenSSl Encryption method
-$iv_length = openssl_cipher_iv_length($ciphering);
-$options = 0;
-
-// Non-NULL Initialization Vector for encryption
-$encryption_iv = '1234567891011121';
-
-// Store the encryption key
-$encryption_key = "aylEwhyjpK2j21Ih1L";
-
-// Use openssl_encrypt() function to encrypt the data
-$encryption = openssl_encrypt($email, $ciphering, $encryption_key, $options, $encryption_iv);
-*/
-
+//JavaScript weiterleitung
 echo "
 <script type=\"text/javascript\">
 
@@ -78,6 +64,7 @@ window.open('profile.php', '_self');
 </script>
 ";
 
+//Shcließen der Datenbbank
 $conn->close();
 
 ?>

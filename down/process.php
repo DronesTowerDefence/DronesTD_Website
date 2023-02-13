@@ -1,4 +1,5 @@
 <!doctype html>
+<!--Hier wird Standart-HTML Kram, der auf jeder Seite gleich ist, ausgeführt :)-->
 <html id="html" lang="de" class=dn>
 
 <head>
@@ -37,44 +38,49 @@
 
 
 <?php
-
+//Hier speicher ich die mit dem POST übergebenen Elemente in Variablen.
+//Es gibt grundsätzlich 2  Arten, GET UND POST. Bei GET wird aber in der URL DAten mitgegeben, und das schickt sich bei Passwörtern nicht.
 $username = $_POST["username"];
 $email = $_POST["email"];
 $passwort = $_POST["passwort"];
 $passwort2 = $_POST["passwort2"];
-$check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
+$check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
 
+//Falls der Haken nicht angeklickt wurde
 if (!$check) {
     die("<h1>Nutzungsbedingungen müssen angenommen werden!</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
+//Falls die beiden Passwörter unterschiedlich sind
 if ($passwort != $passwort2) {
     die("<h1>Passwörter stimmen nicht überein</h1><br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-//var_dump($username, $email, $passwort, $passwort2, $check);
+//var_dump($username, $email, $passwort, $passwort2, $check); Testausgabe der übergebenen Attribute
 
-$host = "localhost:3306";
+$host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
 $username1 = "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
-$conn = mysqli_connect($host, $username1, $password, $dbname);
+$conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
 
-if (mysqli_connect_errno()) {
+if (mysqli_connect_errno()) { //falls kaputt
     die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-//Checken nach Dopplungen
-
+//Abfrage wird als String gespeichert
 $sqlCheck = "SELECT username, email FROM user_account WHERE 
 email = '$email' OR username = '$username'";
 
+//Abfrage wird durch query ausgeführt.
 $result = $conn->query($sqlCheck);
 
+//Wenn es 0 Spalten gibt, gibt es logischerweise keine Antwort, also gibt es keine doppelungen.
+//Wenn größer als 0, doppeln sich email oder username, und das geht nicht.
 if ($result->num_rows > 0) {
 
     die("Username schon verwendet oder die Email ist bereits mit einem Account verknüpft!
@@ -88,37 +94,33 @@ if ($result->num_rows > 0) {
 //Eintragen der Daten
 
 $sql = "INSERT INTO user_account(username, email, passwort) 
-VALUES(?,?,?)";
+VALUES(?,?,?)"; // Die Fragezeichen sind Platzhalter, um eine SQL-Injection (vom User eingegebene Abfrage, 
+//die Daten preisgeben soll) zu verhindern.
 
-$stmt = mysqli_stmt_init($conn);
+$stmt = mysqli_stmt_init($conn); //Zwischenschritt.
 
-if (!mysqli_stmt_prepare($stmt, $sql)) {
+if (!mysqli_stmt_prepare($stmt, $sql)) { //Verbindung wird hier aufgebaur
 
     die(mysqli_error($conn) . "<br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 
 }
 
-mysqli_stmt_bind_param(
+mysqli_stmt_bind_param( //Hier werden die Platzhalter aufgefüllt
     $stmt,
-    "sss",
+    "sss", //sss für 3x String, die aufgefüllt werden
     $username,
     $email,
     $passwort
 );
 
-mysqli_stmt_execute($stmt);
+mysqli_stmt_execute($stmt); //Ausführen der Abfrage
 
-$msg = "Ihr Account bei https://www.dronestd.de wurde erstellt! \n\n Sie können sich nun anmelden, etc.";
-
-$msg = wordwrap($msg, 70);
-
-mail($email, "Account Erstellt!",$msg);
 
 echo "Ihr Account wurde erstellt!
 <br><br> Hier gehts zur Anmeldung: 
 <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>";
 
-
+//Schließen der Datenbank
 $conn->close();
 

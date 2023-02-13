@@ -1,11 +1,13 @@
     
     <?php
+    //Cache wird deaktiviert, damir Profilbild immer aktualisiert wird.
+    //Sonst wird der BrowserCache benutzt, der Bilder speichert auf längere Dauer und Änderungen demnach nicht anzeigt.
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
     ?>
-    
-    <!-- #region HTML-->
+
+   
 <!doctype html>
 <html id="html" lang="de" class=dn>
 
@@ -41,23 +43,12 @@
   </div>
   <br>
 
-<!-- #endregion -->
-<!-- #region PHP-->
+
     <?php
 
     session_start();
 
-    
-
-    /*
-    $encryption = $_COOKIE["user"];
-    $decryption_iv = '1234567891011121';
-    // Entschlüsselungsschlüssel
-    $decryption_key = "aylEwhyjpK2j21Ih1L";
-    $ciphering = "AES-128-CTR";
-    $decryption=openssl_decrypt ($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
-    */
-
+    //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
     if ($_SESSION["loggedin"] == 0) {
 
       die("Sie sind nicht angemeldet. <br> <br>
@@ -66,6 +57,9 @@
     }
 
 
+//Bildname ist mit Username gespeichert. Da Sessions (Username ist dort gespeichert) nur mit PHP ausgelesen werden können,
+//echost du die HTML-Anweisungen, und schiebst den Session-Username zwischen.
+//Praktisch kann man mit PHP ganz einfach HTML echo'n und einschieben.
 
 echo "<h1> Profil </h1> <img src='http://www.dronesClient.DronesTD.de/"; 
 echo $_SESSION["username"];
@@ -73,10 +67,10 @@ echo ".png' style='float:right;width:250px;height:250px;> '";
 
 
 
-  
+//Der Punkt ist das Äquivalent zum '+' bei Strings in C++, damit fügst du Sachen zusammen.
 echo "
 <br> 
-Nutzername: <code>" . $_SESSION["username"] . " </code>
+Nutzername: <code>" . $_SESSION["username"] . " </code> 
 <br> 
 Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
@@ -95,9 +89,9 @@ Email: <code>" . $_SESSION["email"] . "</code>
 
 
 
-
+<!--Soll rechts unter dem Bild sein-->
 <div id = rechts style="float:right;">
-  
+  <!--Datei wird hier uploadet/angenommen-->
   <form action="upload.php" method="post" enctype="multipart/form-data">
   Profilbild auswählen: (unter 1000KB) <br>
   Nur PNG!!!
@@ -116,7 +110,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
   <br>
   <br>
   <br>
-
+    <!--Abmelden PHP wird aufgerufen-->
     <form action='log_out.php' method='post'>
       <br>
       <label>
@@ -127,7 +121,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
       <button><p style="color: red">Abmelden</button>
     </form>
 
-
+    <!--Delete Account PHP wird aufgerufen-->
     <form action='deleteAcc.php' method='post'>
       <br>
       <label>
@@ -140,19 +134,6 @@ Email: <code>" . $_SESSION["email"] . "</code>
 
     <br>
    
-
-<!--<div id = rechts style="float:right;">
-  <h1> Noch nicht benutzen! </h1>
-  <form action="upload.php" method="post" enctype="multipart/form-data">
-  Profilbild auswählen: (unter 500KB)
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload Image" name="submit">
-  </form>
-  </div>
-  -->
-
-
-
 
   </body>
 
