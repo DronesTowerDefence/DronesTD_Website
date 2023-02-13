@@ -49,11 +49,16 @@ $turm3_bool = filter_input(INPUT_POST, "turm3", FILTER_VALIDATE_BOOLEAN); //Hier
 $turm4_bool = filter_input(INPUT_POST, "turm4", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
 $turm5_bool = filter_input(INPUT_POST, "turm5", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
 
+
+
 $turm1 = $_POST["turm1"];
 $turm2 = $_POST["turm2"];
 $turm3 = $_POST["turm3"];
 $turm4 = $_POST["turm4"];
 $turm5 = $_POST["turm5"];
+
+var_dump($turm1, $turm1_bool); //Testausgabe der übergebenen Attribute
+
 
 //Falls der Haken nicht angeklickt wurde
 if (!$turm1_bool && !$turm2_bool && !$turm3_bool && !$turm3_bool && !$turm4_bool && !$turm5_bool) {
