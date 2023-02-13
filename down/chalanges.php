@@ -50,7 +50,6 @@ $turm4_bool = filter_input(INPUT_POST, "turm4", FILTER_VALIDATE_BOOLEAN); //Hier
 $turm5_bool = filter_input(INPUT_POST, "turm5", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
 
 
-
 $turm1 = $_POST["turm1"];
 $turm2 = $_POST["turm2"];
 $turm3 = $_POST["turm3"];
@@ -90,6 +89,7 @@ $sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Turm1, Turm2 , Turm3 , T
 VALUES('$geld','$beginn','$ende' , '$turm1' , '$turm2' , '$turm3' , '$turm4' , '$turm5')";
 //die Daten preisgeben soll) zu verhinder.
 
+var_dump($sql);
 $conn->query($sql);
 
 echo "Aufgabe Erstellt
