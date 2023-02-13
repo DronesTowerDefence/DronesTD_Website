@@ -43,16 +43,16 @@
 $geld = $_POST["geld"];
 $beginn = filter_input(INPUT_POST, "beginn", FILTER_VALIDATE_INT);
 $ende = filter_input(INPUT_POST, "ende", FILTER_VALIDATE_INT);
-const turm1 = $_POST["turm1"];
-const turm2 = $_POST["turm2"];
-const turm3 = $_POST["turm3"];
-const turm4 = $_POST["turm4"];
-const turm5 = $_POST["turm5"];
+$turm1 = $_POST["turm1"];
+$turm2 = $_POST["turm2"];
+$turm3 = $_POST["turm3"];
+$turm4 = $_POST["turm4"];
+$turm5 = $_POST["turm5"];
 
 
 
 //Falls der Haken nicht angeklickt wurde
-if (turm1 == '' && turm2 == '' && turm3 == '' && turm4 == '' && turm5 == '') {
+if ($turm1 == '' && $turm2 == '' && $turm3 == '' && $turm4 == '' && $turm5 == '') {
     die("<h1>Fehler: Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
@@ -66,15 +66,15 @@ $t2 = 0;
 $t3 = 0;
 $t4 = 0;
 $t5 = 0;
-if (turm1 == 'on')
+if ($turm1 == 'on')
     $t1 = 1;
-if (turm2 == 'on')
+if ($turm2 == 'on')
     $t2 = 1;
-if (turm3 == 'on')
+if ($turm3 == 'on')
     $t3 = 1;
-if (turm4 == 'on')
+if ($turm4 == 'on')
     $t4 = 1;
-if (turm5 == 'on')
+if ($turm5 == 'on')
     $t5 = 1;
 
 $host = "localhost:3306"; //Datenbankdetails
