@@ -57,12 +57,12 @@ $turm5 = $_POST["turm5"];
 
 //Falls der Haken nicht angeklickt wurde
 if (!$turm1_bool && !$turm2_bool && !$turm3_bool && !$turm3_bool && !$turm4_bool && !$turm5_bool) {
-    die("<h1>Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
-    <a href='https://www.dronestd.de/down/chalanges'>-><b>Zum creator</b></a></p>");
+    die("<h1>Fehler: Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
-if ($ende > $beginn) {
-    die("<h1>Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
-    <a href='https://www.dronestd.de/down/chalanges'>-><b>Zum creator</b></a></p>");
+if ($ende < $beginn) {
+    die("<h1>Fehler: Die Endrunde muss gleich oder größer als der Startrunde sein</h1> <br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
 
 $host = "localhost:3306"; //Datenbankdetails
@@ -85,7 +85,7 @@ $sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Turm1, Turm2 , Turm3 , T
 VALUES('$geld','$beginn','$ende' , '$turm1' , '$turm2' , '$turm3' , '$turm4' , '$turm5')";
 //die Daten preisgeben soll) zu verhinder.
 
-$conn->query($sqlCheck);
+$conn->query($sql);
 
 echo "Aufgabe Erstellt
 <br><br> Hier gehts zur HomePage
