@@ -43,24 +43,16 @@
 $geld = $_POST["geld"];
 $beginn = filter_input(INPUT_POST, "beginn", FILTER_VALIDATE_INT);
 $ende = filter_input(INPUT_POST, "ende", FILTER_VALIDATE_INT);
-$turm1_bool = filter_input(INPUT_POST, "turm1", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
-$turm2_bool = filter_input(INPUT_POST, "turm2", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
-$turm3_bool = filter_input(INPUT_POST, "turm3", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
-$turm4_bool = filter_input(INPUT_POST, "turm4", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
-$turm5_bool = filter_input(INPUT_POST, "turm5", FILTER_VALIDATE_BOOLEAN); //Hier filtere ich check (die normalerweise 1/0 wäre), in bool um (true/false)
+const turm1 = $_POST["turm1"];
+const turm2 = $_POST["turm2"];
+const turm3 = $_POST["turm3"];
+const turm4 = $_POST["turm4"];
+const turm5 = $_POST["turm5"];
 
-
-$turm1 = $_POST["turm1"];
-$turm2 = $_POST["turm2"];
-$turm3 = $_POST["turm3"];
-$turm4 = $_POST["turm4"];
-$turm5 = $_POST["turm5"];
-
-var_dump($turm1, $turm1_bool); //Testausgabe der übergebenen Attribute
 
 
 //Falls der Haken nicht angeklickt wurde
-if (!$turm1_bool && !$turm2_bool && !$turm3_bool && !$turm3_bool && !$turm4_bool && !$turm5_bool) {
+if (turm1 == '' && turm2 == '' && turm3 == '' && turm4 == '' && turm5 == '') {
     die("<h1>Fehler: Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
@@ -68,6 +60,22 @@ if ($ende < $beginn) {
     die("<h1>Fehler: Die Endrunde muss gleich oder größer als der Startrunde sein</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
+
+$t1 = 0;
+$t2 = 0;
+$t3 = 0;
+$t4 = 0;
+$t5 = 0;
+if (turm1 == 'on')
+    $t1 = 1;
+if (turm2 == 'on')
+    $t2 = 1;
+if (turm3 == 'on')
+    $t3 = 1;
+if (turm4 == 'on')
+    $t4 = 1;
+if (turm5 == 'on')
+    $t5 = 1;
 
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
@@ -86,7 +94,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 //Eintragen der Daten
 
 $sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Turm1, Turm2 , Turm3 , Turm4 , Turm5  ) 
-VALUES('$geld','$beginn','$ende' , '$turm1' , '$turm2' , '$turm3' , '$turm4' , '$turm5')";
+VALUES('$geld','$beginn','$ende' , '$t1' , '$t2' , '$t3' , '$t4' , '$t5')";
 //die Daten preisgeben soll) zu verhinder.
 
 var_dump($sql);
