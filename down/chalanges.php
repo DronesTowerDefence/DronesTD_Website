@@ -40,9 +40,11 @@
 <?php
 //Hier speicher ich die mit dem POST übergebenen Elemente in Variablen.
 //Es gibt grundsätzlich 2  Arten, GET UND POST. Bei GET wird aber in der URL DAten mitgegeben, und das schickt sich bei Passwörtern nicht.
-$geld = $_POST["geld"];
+$geld = filter_input(INPUT_POST, "geld", FILTER_VALIDATE_INT);
 $beginn = filter_input(INPUT_POST, "beginn", FILTER_VALIDATE_INT);
 $ende = filter_input(INPUT_POST, "ende", FILTER_VALIDATE_INT);
+$leben = filter_input(INPUT_POST, "leben", FILTER_VALIDATE_INT);
+$karte = filter_input(INPUT_POST, "karte", FILTER_VALIDATE_INT);
 $turm1 = $_POST["turm1"];
 $turm2 = $_POST["turm2"];
 $turm3 = $_POST["turm3"];
@@ -93,8 +95,8 @@ if (mysqli_connect_errno()) { //falls kaputt
 
 //Eintragen der Daten
 
-$sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Turm1, Turm2 , Turm3 , Turm4 , Turm5  ) 
-VALUES('$geld','$beginn','$ende' , '$t1' , '$t2' , '$t3' , '$t4' , '$t5')";
+$sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Leben, Karte ,Turm1, Turm2 , Turm3 , Turm4 , Turm5  ) 
+VALUES('$geld','$beginn','$ende' ,'$leben' ,'$karte' ,  '$t1' , '$t2' , '$t3' , '$t4' , '$t5')";
 //die Daten preisgeben soll) zu verhinder.
 
 var_dump($sql);
