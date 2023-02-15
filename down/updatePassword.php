@@ -40,12 +40,12 @@ echo $new_name;
 
  
  //Weiterleitung 
- /*echo "
+ echo "
  <script type=\"text/javascript\">
  
  window.open('../index.html', '_self'); 
  
  </script>";
-*/
+
 
 ?>
