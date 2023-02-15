@@ -131,7 +131,9 @@ Email: <code>" . $_SESSION["email"] . "</code>
       &emsp;
       <button><p style="color: red">Löschen</button>
     </form>
-
+    <br>
+    <hr>
+    <br>
     <form action='updatePassword.php' method='post'>
       <br>
       <label>
