@@ -142,7 +142,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
       </label>
       <br>
       <label for="new_name">Neues Passwort:</label>
-    <input type="password" id="new_name" name="new_name" required maxlength="20" placeholder="Mustermann2">
+    <input type="password" id="new_name" name="new_name" required maxlength="18" placeholder="Max 18">
     
       <button><p style="color: red">Ändern</button>
   </form>
