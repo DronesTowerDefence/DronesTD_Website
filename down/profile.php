@@ -136,11 +136,13 @@ Email: <code>" . $_SESSION["email"] . "</code>
       <br>
       <label>
         <input type='checkbox' name='check' required>
-        Wirklich irreversibel löschen?
+        Wirklich Passwort ändern?
       </label>
       &emsp;
-      <label for="new_name">Passwort:</label>
+      <label for="new_name"><br>Neues Passwort:</label>
     <input type="password" id="new_name" name="new_name" required maxlength="20" placeholder="Mustermann2">
+    &emsp;
+      <button><p style="color: red">Ändern</button>
   </form>
 
     <br>
