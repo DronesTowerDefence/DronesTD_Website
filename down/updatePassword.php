@@ -7,7 +7,6 @@ session_start();
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
 $new_name = $_POST["new_name"];
 
-echo $new_name;
 
 if (!$check) {
     die("Bitte Hacken für Abmelden setzen");
@@ -30,7 +29,6 @@ if (mysqli_connect_errno()) { //falls kaputt
 
 $result = $conn->query($sqlCheck);
 
-var_dump($result);
 
  $_SESSION["loggedin"] = 0;
  //Gespeicherte Seyssions werden gelöscht.
@@ -39,12 +37,12 @@ var_dump($result);
 
 
  //Weiterleitung 
- /*echo"
+ echo"
  <script type=\"text/javascript\">
  
  window.open('../index.html', '_self'); 
  
  </script>";
 
-*/
+
 ?>
