@@ -132,7 +132,19 @@ Email: <code>" . $_SESSION["email"] . "</code>
       <button><p style="color: red">Löschen</button>
     </form>
 
+    <form action='updatePassword.php' method='post'>
+      <br>
+      <label>
+        <input type='checkbox' name='check' required>
+        Wirklich irreversibel löschen?
+      </label>
+      &emsp;
+      <label for="new_name">Passwort:</label>
+    <input type="password" id="new_name" name="new_name" required maxlength="20" placeholder="Mustermann2">
+  </form>
+
     <br>
+
    
 
   </body>
