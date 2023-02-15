@@ -27,7 +27,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 //Abfrage wird als String gespeichert
  $sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION["username"]'";
 
-
+$conn->query($sqlCheck);
 
 
  $_SESSION["loggedin"] = 0;
