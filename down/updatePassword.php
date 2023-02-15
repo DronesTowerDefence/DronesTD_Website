@@ -7,6 +7,7 @@ session_start();
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
 $new_name = $_POST["new_name"];
 
+echo $new_name;
 
 if (!$check) {
     die("Bitte Hacken für Abmelden setzen");
@@ -25,27 +26,25 @@ if (mysqli_connect_errno()) { //falls kaputt
 }
 
 //Abfrage wird als String gespeichert
- $sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION["username"]'";
+ $sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION[username]'";
 
-$conn->query($sqlCheck);
+$result = $conn->query($sqlCheck);
 
+var_dump($result);
 
  $_SESSION["loggedin"] = 0;
  //Gespeicherte Seyssions werden gelöscht.
  unset($_SESSION["username"]);
  unset($_SESSION["email"]);
 
-echo $new_name;
 
-
- 
  //Weiterleitung 
- echo "
+ /*echo"
  <script type=\"text/javascript\">
  
  window.open('../index.html', '_self'); 
  
  </script>";
 
-
+*/
 ?>
