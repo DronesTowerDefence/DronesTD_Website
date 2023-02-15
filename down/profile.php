@@ -139,7 +139,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
         Wirklich Passwort ändern?
       </label>
       <br>
-      <label for="new_name"><Neues Passwort:</label>
+      <label for="new_name">Neues Passwort:</label>
     <input type="password" id="new_name" name="new_name" required maxlength="20" placeholder="Mustermann2">
     &emsp;
       <button><p style="color: red">Ändern</button>
