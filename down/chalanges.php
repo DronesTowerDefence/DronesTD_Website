@@ -35,11 +35,21 @@ if ($_SESSION["loggedin"] != "1") {
 }
 if (!isset($_SESSION["admin"])) {
 
-  echo "nicht erlaubt, da du kein Admin bist ";
-}
+  echo " 
+  <script type=\"text/javascript\">
+  
+  window.open('https://www.dronestd.de', '_self'); 
+  
+  </script>
+  ";}
 if ($_SESSION["admin"] != "1") {
-  echo "nicht erlaubt, da du kein Admin bist";
-}
+  echo " 
+  <script type=\"text/javascript\">
+  
+  window.open('https://www.dronestd.de', '_self'); 
+  
+  </script>
+  ";}
 
 
 ?>
