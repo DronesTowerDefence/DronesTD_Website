@@ -54,7 +54,7 @@ $admin = $row["admin"];
 $_SESSION["email"] = $email;
 $_SESSION["username"] = $username;
 $_SESSION["loggedin"] = 1; //eingeloggt-Status
-$_SESSION["loggedin"] = $admin;
+$_SESSION["admin"] = $admin;
 
 //JavaScript weiterleitung
 echo "
