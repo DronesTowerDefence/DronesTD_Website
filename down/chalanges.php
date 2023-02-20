@@ -7,28 +7,38 @@
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ae32d225a7.js" crossorigin="anonymous"></script>
-  <title>Anmelden</title>
+  <title>Aufgaben</title>
 </head>
 
 <?php
 
 session_start();
 
+if (!isset($_SESSION["loggedin"])) {
 
-//Weiterleitung wenn eingeloggt
+  echo " 
+  <script type=\"text/javascript\">
+  
+  window.open('sign-in.php', '_self'); 
+  
+  </script>
+  ";
+}
+if ($_SESSION["loggedin"] != "1") {
+  echo " 
+  <script type=\"text/javascript\">
+  
+  window.open('sign-in.php', '_self'); 
+  
+  </script>
+  ";
+}
+if (!isset($_SESSION["admin"])) {
 
-echo  $_SESSION["loggedin"];
-
-// <script type=\"text/javascript\">
-
-// window.open('sign-in.php', '_self'); 
-
-// </script>
-;
-// if ($_SESSION["loggedin"] == "0") {
-// }
-if ($_SESSION["admin"] == "1") {
-  echo "Du bist kein Admin";
+  echo "nicht erlaubt, da du kein Admin bist ";
+}
+if ($_SESSION["admin"] != "1") {
+  echo "nicht erlaubt, da du kein Admin bist";
 }
 
 
