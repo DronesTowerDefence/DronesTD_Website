@@ -24,7 +24,7 @@ echo  $_SESSION["loggedin"];
 // window.open('sign-in.php', '_self'); 
 
 // </script>
-";
+;
 // if ($_SESSION["loggedin"] == "0") {
 // }
 if ($_SESSION["admin"] == "1") {
