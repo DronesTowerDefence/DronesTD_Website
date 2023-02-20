@@ -66,7 +66,7 @@ if ($_SESSION["admin"] == "1") {
       Gebe an, in welcher Runde die Aufgabe startet und in welcher sie endet.
       Außerdem kannst du Tower sperren und festlegen, wieviel Geld dem Spieler zu beginn der Aufgabe zu verfügung stehen
     </p>
-    <form action="chalanges.php" method="post">
+    <form action="chalanges_proccess.php" method="post">
       <label for="geld">Geld:</label>
       <input type="number" id="geld" name="geld" required placeholder="1000">
 
