@@ -16,18 +16,19 @@ session_start();
 
 
 //Weiterleitung wenn eingeloggt
-if ($_SESSION["loggedin"] == "0") {
 
-  echo " 
-  <script type=\"text/javascript\">
-  
-  window.open('sign-in.php', '_self'); 
-  
-  </script>
-  ";
-}
+echo  $_SESSION["loggedin"];
+
+// <script type=\"text/javascript\">
+
+// window.open('sign-in.php', '_self'); 
+
+// </script>
+";
+// if ($_SESSION["loggedin"] == "0") {
+// }
 if ($_SESSION["admin"] == "1") {
-  echo " Du bist kein Admin";
+  echo "Du bist kein Admin";
 }
 
 
