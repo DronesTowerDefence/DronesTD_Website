@@ -131,8 +131,24 @@ Email: <code>" . $_SESSION["email"] . "</code>
       &emsp;
       <button><p style="color: red">Löschen</button>
     </form>
+    <br>
+    <hr>
+    <br>
+    <form action='updatePassword.php' method='post'>
+      <br>
+      <label>
+        <input type='checkbox' name='check' required>
+        Wirklich Passwort ändern?
+      </label>
+      <br>
+      <label for="new_name">Neues Passwort:</label>
+    <input type="password" id="new_name" name="new_name" required maxlength="18" placeholder="Max 18">
+    
+      <button><p style="color: red">Ändern</button>
+  </form>
 
     <br>
+
    
 
   </body>
