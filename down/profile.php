@@ -1,13 +1,4 @@
-    
-    <?php
-    //Cache wird deaktiviert, damir Profilbild immer aktualisiert wird.
-    //Sonst wird der BrowserCache benutzt, der Bilder speichert auf längere Dauer und Änderungen demnach nicht anzeigt.
-    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-    header("Cache-Control: post-check=0, pre-check=0", false);
-    header("Pragma: no-cache");
-    ?>
 
-   
 <!doctype html>
 <html id="html" lang="de" class=dn>
 
@@ -75,7 +66,10 @@ Nutzername: <code>" . $_SESSION["username"] . " </code>
 Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
 <br>
-<h2> Hier werden bald die Statistiken angezeigt!</h2>
+<h2> Statistiken: </h2>
+<br>
+<br> //1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer
+
 ";
 ?>
  
