@@ -34,7 +34,7 @@
   <br>
 
 
-    <?php
+<?php
 
     session_start();
 
@@ -45,6 +45,49 @@
   <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
 
     }
+
+
+$host = "localhost:3306";
+$dbname = "dronestd_account";
+$username1 = "db_access";
+$password = "aYOKWhS2lVntnAsB";
+
+//Connection wird gespeichert
+$conn = mysqli_connect($host, $username1, $password, $dbname);
+
+
+
+if (mysqli_connect_errno()) {
+    die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+}
+
+$sqlCheck = "SELECT username, xp FROM user_account";
+$result = $conn->query($sqlCheck);
+
+$returnS = "";
+	
+	
+for($i = 0; $i < $result->num_rows; $i++){
+	
+	$row = $result->fetch_assoc();
+	$returnS .= $row["username"] . ": ". $row["xp"] . "<br>";
+		
+}
+	
+echo $returnS;
+	
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
 
