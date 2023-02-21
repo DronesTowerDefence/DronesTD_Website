@@ -71,7 +71,7 @@ $returnS = "";
 for($i = 0; $i < $result->num_rows; $i++){
 	
 	$row = $result->fetch_assoc();
-	$returnS .= $row["username"] . ": ";
+	$returnS .= "<h3>".$row["username"] . "</h3>: ";
     if($row["xp"]==NULL){
         $returnS .= "<code>0</code><br>";
     
