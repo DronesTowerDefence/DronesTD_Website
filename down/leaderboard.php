@@ -73,10 +73,10 @@ for($i = 0; $i < $result->num_rows; $i++){
 	$row = $result->fetch_assoc();
 	$returnS .= "<td><b>".$row["username"] . "</b></td> ";
     if($row["xp"]==NULL){
-        $returnS .= "<td><code>0</code><br></td>";
+        $returnS .= "<td><code>0</code></td>";
     
     }
-    else {$returnS .= "<td><code>".$row["xp"] . "</code></td>";}
+    else {$returnS .= "<td><code>".$row["xp"] . "</code></td><br>";}
 		
 }
 
