@@ -48,6 +48,8 @@
     }
 
 
+
+
 //Bildname ist mit Username gespeichert. Da Sessions (Username ist dort gespeichert) nur mit PHP ausgelesen werden können,
 //echost du die HTML-Anweisungen, und schiebst den Session-Username zwischen.
 //Praktisch kann man mit PHP ganz einfach HTML echo'n und einschieben.
@@ -55,6 +57,22 @@
 echo "<h1> Profil </h1> <img src='http://www.dronesClient.DronesTD.de/"; 
 echo $_SESSION["username"];
 echo ".png' style='float:right;width:250px;height:250px;> '";
+
+//Db
+$host = "localhost:3306"; //Datenbankdetails
+$dbname = "dronestd_account";
+$username1 = "db_access";
+$password = "aYOKWhS2lVntnAsB";
+
+$conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
+
+if (mysqli_connect_errno()) { //falls kaputt
+    die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+}
+
+//Abfrage wird als String gespeichert
+$sqlCheck ="SELECT achievementID , value FROM user_achievement ua JOIN user_account a ON ua.userID = a.userID WHERE a.username = '$_SESSION[username]'";
 
 
 
