@@ -71,7 +71,7 @@ $returnS = "<table><tr><th>Name</th><th>XP</th></tr><tr>";
 for($i = 0; $i < $result->num_rows; $i++){
 	
 	$row = $result->fetch_assoc();
-	$returnS .= "<td><b>".$row["username"] . "</b></td> ";
+	$returnS .= "<td>".$row["username"] . "</td> ";
     if($row["xp"]==NULL){
         $returnS .= "<td><code>0</code></td>";
     
