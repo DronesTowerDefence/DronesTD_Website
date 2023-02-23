@@ -75,7 +75,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 $sqlCheck ="SELECT achievementID, value FROM user_achievement ua JOIN user_account a ON ua.userID = a.userID WHERE a.username = 'Account'";
 
 $result = $conn->query($sqlCheck);
-
+echo "A";
 for($i = 0; $i < 5; $i++){
 $row = $result->fetch_assoc();
 echo $row["achievementID"] . " " . $row["value"];
@@ -92,9 +92,10 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <br>
 <h2> Statistiken: </h2>
 <br>
-<br> //1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer
+<br> 
 
 ";
+/*//1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer*/
 ?>
  
 <br>
