@@ -74,6 +74,10 @@ if (mysqli_connect_errno()) { //falls kaputt
 //Abfrage wird als String gespeichert
 $sqlCheck ="SELECT achievementID , value FROM user_achievement ua JOIN user_account a ON ua.userID = a.userID WHERE a.username = '$_SESSION[username]'";
 
+$result = $conn->query($sqlCheck);
+var_dump($result);
+$row = $result->fetch_assoc();
+
 
 
 //Der Punkt ist das Äquivalent zum '+' bei Strings in C++, damit fügst du Sachen zusammen.
