@@ -66,11 +66,12 @@ $password = "aYOKWhS2lVntnAsB";
 
 $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
 
+echo "ok";
 if (mysqli_connect_errno()) { //falls kaputt
     die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
-echo $_SESSION["username"];
+echo "ok";
 
 //Abfrage wird als String gespeichert
 $sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_account AS a ON ua.userID = a.userID WHERE a.username = 'Account'";
