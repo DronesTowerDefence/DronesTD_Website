@@ -65,7 +65,7 @@ if (mysqli_connect_errno()) {
 $sqlCheck = "SELECT username, xp FROM user_account";
 $result = $conn->query($sqlCheck);
 
-$returnS = "";
+$returnS = "<table><tr><th>Name</th><th>XP</th></tr><tr>";
 	
 /*
 for($i = 0; $i < $result->num_rows; $i++){
@@ -85,11 +85,7 @@ echo $returnS;
 	
 */
 
-$returnS .= "<table>
-<tr>
-  <td>Username</td>
-  <td>XP</td>
-</tr>
+$returnS .= "
 
 <tr>
   <td>Account</td>
