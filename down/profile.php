@@ -79,12 +79,7 @@ $sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_ac
 
 $result = $conn->query($sqlCheck);
 
-var_dump($result);
 
-for($i = '0'; $i < '5'; $i++){
-$row = $result->fetch_assoc();
-echo $row["ua.achievementID"] . " " . $row["ua.value"];
-}
 
 
 //Der Punkt ist das Äquivalent zum '+' bei Strings in C++, damit fügst du Sachen zusammen.
@@ -97,9 +92,13 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <br>
 <h2> Statistiken: </h2>
 <br>
-<br> 
 
 ";
+
+for($i = '0'; $i < '5'; $i++){
+$row = $result->fetch_assoc();
+echo $row["achievementID"] . " " . $row["value"];
+}
 /*//1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer*/
 ?>
  
