@@ -110,9 +110,7 @@ echo $array1[$i] . $row["value"];
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 
 
