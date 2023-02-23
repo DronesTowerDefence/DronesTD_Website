@@ -67,33 +67,32 @@ $result = $conn->query($sqlCheck);
 
 $returnS = "<table><tr><th>Name</th><th>XP</th></tr><tr>";
 	
-/*
+
 for($i = 0; $i < $result->num_rows; $i++){
 	
 	$row = $result->fetch_assoc();
 	$returnS .= "<td>".$row["username"] . "</td> ";
     if($row["xp"]==NULL){
-    $returnS.="<td>0</td>";}
-    
+    $returnS.="<td>0</td>";
+  }else{  
   $returnS .="<td>".$row["xp"] . "</td>";
-		
+  }
 }
 
 $returnS .= "</tr></table>";
 	
 echo $returnS;
 	
-*/
 
-$returnS .= "
-
-<tr>
+/*<tr>
   <td>Account</td>
   <td>0</td>
 </tr>
 <tr>
   <td>Account1</td>
-  <td>1</td>
+  <td>1</td>*/
+
+$returnS .= "
 </table>
 ";
 
