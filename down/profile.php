@@ -72,7 +72,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 }
 
 //Abfrage wird als String gespeichert
-$sqlCheck ="SELECT achievementID, value FROM user_achievement ua JOIN user_account a ON ua.userID = a.userID WHERE a.username = '$_SESSION[username]'";
+$sqlCheck ="SELECT achievementID, value FROM user_achievement ua JOIN user_account a ON ua.userID = a.userID WHERE a.username = 'Account'";
 
 $result = $conn->query($sqlCheck);
 
