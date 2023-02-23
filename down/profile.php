@@ -35,7 +35,7 @@
   <br>
 
 
-    <?php
+<?php
 
     session_start();
 
@@ -79,7 +79,7 @@ $result = $conn->query($sqlCheck);
 for($i = 0; $i < 5; $i++){
 echo "A";
 $row = $result->fetch_assoc();
-echo $row["achievementID"] . " " . $row["value"];
+echo $row["ua.achievementID"] . " " . $row["ua.value"];
 }
 
 
