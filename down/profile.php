@@ -57,6 +57,7 @@
 echo "<h1> Profil </h1> <img src='http://www.dronesClient.DronesTD.de/"; 
 echo $_SESSION["username"];
 echo ".png' style='float:right;width:250px;height:250px;> '";
+echo "OK";
 
 //Db
 $host = "localhost:3306"; //Datenbankdetails
