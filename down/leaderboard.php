@@ -65,13 +65,13 @@ if (mysqli_connect_errno()) {
 $sqlCheck = "SELECT username, xp FROM user_account";
 $result = $conn->query($sqlCheck);
 
-$returnS = "<table><tr><td>Name</td><td>XP</td></tr><tr>";
+$returnS = "<table><tr><td>Name</td><td>XP</td></tr>";
 	
 
 for($i = 0; $i < $result->num_rows; $i++){
 	
 	$row = $result->fetch_assoc();
-	$returnS .= "<td>".$row["username"] . "</td> ";
+	$returnS .= "<tr><td>".$row["username"] . "</td> ";
     if($row["xp"]==NULL){
     $returnS.="<td>0</td></tr>";
   }else{  
