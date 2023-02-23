@@ -95,9 +95,13 @@ Email: <code>" . $_SESSION["email"] . "</code>
 
 ";
 
+$array1 = array("Drohnen zerstört: ","Türme platziert: ", "Geld platziert: ","Siege: ","Matches gespielt (ges.): ", "Multiplayermatches gespielt: ");
+
 for($i = '0'; $i < '5'; $i++){
+
 $row = $result->fetch_assoc();
-echo $row["achievementID"] . " " . $row["value"];
+echo $array1[$i] . $row["value"];
+
 }
 /*//1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer*/
 ?>
