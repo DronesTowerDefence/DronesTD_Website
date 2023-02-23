@@ -65,7 +65,7 @@ if (mysqli_connect_errno()) {
 $sqlCheck = "SELECT username, xp FROM user_account";
 $result = $conn->query($sqlCheck);
 
-$returnS = "<table><tr><td>Name</td><td>XP</td></tr>";
+$returnS = "<table><tr><td><b>Name</b></td><td><b>XP</b></td></tr>";
 	
 
 for($i = 0; $i < $result->num_rows; $i++){
@@ -73,9 +73,9 @@ for($i = 0; $i < $result->num_rows; $i++){
 	$row = $result->fetch_assoc();
 	$returnS .= "<tr><td>".$row["username"] . "</td> ";
     if($row["xp"]==NULL){
-    $returnS.="<td>0</td></tr>";
+    $returnS.="<td><code>0</code></td></tr>";
   }else{  
-  $returnS .="<td>".$row["xp"] . "</td></tr>";
+  $returnS .="<td><code>".$row["xp"] . "</code></td></tr>";
   }
 }
 
