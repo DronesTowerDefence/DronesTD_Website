@@ -76,7 +76,7 @@ $sqlCheck ="SELECT achievementID, value FROM user_achievement ua JOIN user_accou
 
 $result = $conn->query($sqlCheck);
 
-for($i = 0; $i < $result->num_rows; $i++){
+for($i = 0; $i < 5; $i++){
 $row = $result->fetch_assoc();
 echo $row["achievementID"] . " " . $row["value"];
 }
