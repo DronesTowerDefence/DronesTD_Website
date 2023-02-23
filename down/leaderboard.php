@@ -65,7 +65,7 @@ if (mysqli_connect_errno()) {
 $sqlCheck = "SELECT username, xp FROM user_account";
 $result = $conn->query($sqlCheck);
 
-$returnS = "<table><tr><th>Name</th><th>XP</th></tr><tr>";
+$returnS = "";
 	
 /*
 for($i = 0; $i < $result->num_rows; $i++){
