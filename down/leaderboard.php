@@ -75,7 +75,7 @@ for($i = 0; $i < $result->num_rows; $i++){
     if($row["xp"]==NULL){
     $returnS.="<td>0</td>";}
     
-  $returnS =."<td>".$row["xp"] . "</td>";
+  $returnS .="<td>".$row["xp"] . "</td>";
 		
 }
 
@@ -83,14 +83,6 @@ $returnS .= "</tr></table>";
 	
 echo $returnS;
 	
-
-
-
-
-
-
-
-
 
 
 
