@@ -95,7 +95,7 @@ Email: <code>" . $_SESSION["email"] . "</code>
 
 ";
 
-$array1 = array("Drohnen zerstört: ","Türme platziert: ", "Geld platziert: ","Siege: ","Matches gespielt (ges.): ", "Multiplayermatches gespielt: ");
+$array1 = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
 for($i = '0'; $i < '5'; $i++){
 
