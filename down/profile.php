@@ -92,6 +92,8 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <br>
 <h2> Statistiken: </h2>
 <br>
+<br>
+kommen bald!
 
 ";
 
@@ -100,7 +102,7 @@ $array1 = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdie
 
 
 
-for($i = '0'; $i < '5'; $i++){
+/*for($i = '0'; $i < '5'; $i++){
 
 if($i == 3){
   $result->fetch_assoc();
@@ -112,7 +114,9 @@ $row = $result->fetch_assoc();
 echo $array1[$i] . $row["value"];
 
 }
-/*//1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer*/
+1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer
+*/
+
 ?>
  
 <br>
