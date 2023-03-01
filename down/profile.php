@@ -97,9 +97,18 @@ Email: <code>" . $_SESSION["email"] . "</code>
 
 $array1 = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
+
+
+
 for($i = '0'; $i < '5'; $i++){
 
+if($i == 3){
+  $result->fetch_assoc();
+}
+
 $row = $result->fetch_assoc();
+
+//if($intarray[$i]== )
 echo $array1[$i] . $row["value"];
 
 }

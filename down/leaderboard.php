@@ -42,7 +42,7 @@
     if ($_SESSION["loggedin"] == 0) {
 
       die("Sie sind nicht angemeldet. <br> <br>
-  <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
+  <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmelden</b></a></p>");
 
     }
 
