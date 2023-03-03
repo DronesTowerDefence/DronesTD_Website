@@ -93,13 +93,24 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <h2> Statistiken: </h2>
 <br>
 <br>
-kommen bald!
+Stats in Bearbeitung!
 
 ";
+/*
+$categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
-$array1 = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
+  echo $categories[0];
+  $row = $result->fetch_assoc();
 
-
+  if($row["achievementID"] == 1){
+    if($row["value"]==NULL){
+    echo "0";}else{
+      echo $row["value"];
+    }
+  }else{
+    echo "0";
+  }
+*/
 
 
 /*for($i = '0'; $i < '5'; $i++){
@@ -151,11 +162,6 @@ echo $array1[$i] . $row["value"];
     <!--Abmelden PHP wird aufgerufen-->
     <form action='log_out.php' method='post'>
       <br>
-      <label>
-        <input type='checkbox' name='check' required>
-        Wirklich abmelden?
-      </label>
-      &emsp;
       <button><p style="color: red">Abmelden</button>
     </form>
 
