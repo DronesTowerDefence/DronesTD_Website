@@ -98,7 +98,7 @@ $values = array(0,0,0,0,0,0);
 $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
   
-for($i = 0; $i < 6; $i++)  {
+for($i = 0; $i <= 6; $i++)  {
   if($i == 4){
     continue;
   }
