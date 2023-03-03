@@ -107,7 +107,7 @@ for($i = 0; $i < 6; $i++)  {
   echo $categories[$i];
   $row = $result->fetch_assoc();
 
-  if($row["achievementID"] == $i){
+  if($row["achievementID"] == $i + 1){
     if($row["value"]==NULL){
     echo "0";}else{
       echo $row["value"];
