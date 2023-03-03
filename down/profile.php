@@ -93,16 +93,21 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <h2> Statistiken: </h2>
 <br>
 <br>
-Stats in Bearbeitung!
+
 
 ";
-/*
+  
+  
+$values = array(0,0,0,0,0,0);
 $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
-  echo $categories[0];
+  
+for($i = 0; $i < 6; $i++)  {
+
+  echo $categories[$i];
   $row = $result->fetch_assoc();
 
-  if($row["achievementID"] == 1){
+  if($row["achievementID"] == $i){
     if($row["value"]==NULL){
     echo "0";}else{
       echo $row["value"];
@@ -110,8 +115,7 @@ $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld ve
   }else{
     echo "0";
   }
-*/
-
+}
 
 /*for($i = '0'; $i < '5'; $i++){
 
