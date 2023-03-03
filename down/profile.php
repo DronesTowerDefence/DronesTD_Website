@@ -60,6 +60,22 @@ echo ".png' style='float:right;width:250px;height:250px;> '";
 echo "<br>";
 
 //Db
+
+//Abfrage wird als String gespeichert
+
+//Der Punkt ist das Äquivalent zum '+' bei Strings in C++, damit fügst du Sachen zusammen.
+echo "
+<br> 
+Nutzername: <code>" . $_SESSION["username"] . " </code> 
+<br> 
+Email: <code>" . $_SESSION["email"] . "</code>
+<br> 
+<br>
+<h2> Statistiken: </h2>
+<br>
+<br>
+";
+
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
 $username1 = "db_access";
@@ -73,30 +89,10 @@ if (mysqli_connect_errno()) { //falls kaputt
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
 }
 
-
-//Abfrage wird als String gespeichert
-$sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_account AS a ON ua.userID = a.userID WHERE a.username = 'Account'";
+  $sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_account AS a ON ua.userID = a.userID WHERE a.username = 'Account'";
 
 $result = $conn->query($sqlCheck);
 
-
-
-
-//Der Punkt ist das Äquivalent zum '+' bei Strings in C++, damit fügst du Sachen zusammen.
-echo "
-<br> 
-Nutzername: <code>" . $_SESSION["username"] . " </code> 
-<br> 
-Email: <code>" . $_SESSION["email"] . "</code>
-<br> 
-<br>
-<h2> Statistiken: </h2>
-<br>
-<br>
-
-
-";
-  
   
 $values = array(0,0,0,0,0,0);
 $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
@@ -109,7 +105,8 @@ for($i = 0; $i < 6; $i++)  {
 
   if($row["achievementID"] == $i + 1){
     if($row["value"]==NULL){
-    echo "0";}else{
+    echo "0";}
+    else{
       echo $row["value"];
     }
   }else{
