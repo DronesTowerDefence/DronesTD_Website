@@ -93,15 +93,11 @@ if (mysqli_connect_errno()) { //falls kaputt
 
 $result = $conn->query($sqlCheck);
 
-  
-$values = array(0,0,0,0,0,0);
-$categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
+$categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Upgrades gekauft","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
   
-for($i = 0; $i <= 6; $i++)  {
-  if($i == 4){
-    continue;
-  }
+for($i = 0; $i <= 7; $i++)  {
+  
 
   echo $categories[$i];
   $row = $result->fetch_assoc();
