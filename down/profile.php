@@ -74,8 +74,9 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <h2> Statistiken: </h2>
 <br>
 <br>
+Kommt.
 ";
-
+/*
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
 $username1 = "db_access";
@@ -114,6 +115,7 @@ for($i = 0; $i <= 7; $i++)  {
 
 }
 
+*/
 /*for($i = '0'; $i < '5'; $i++){
 
 if($i == 3){
