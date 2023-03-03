@@ -99,6 +99,9 @@ $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld ve
 
   
 for($i = 0; $i < 6; $i++)  {
+  if($i == 4){
+    continue;
+  }
 
   echo $categories[$i];
   $row = $result->fetch_assoc();
@@ -112,7 +115,7 @@ for($i = 0; $i < 6; $i++)  {
   }else{
     echo "0";
   }
-  
+
 }
 
 /*for($i = '0'; $i < '5'; $i++){
