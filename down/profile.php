@@ -97,7 +97,6 @@ $result = $conn->query($sqlCheck);
 $values = array(0,0,0,0,0,0);
 $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
 
-var_dump($result->fetch_all());
   
 for($i = 0; $i < 6; $i++)  {
 
@@ -113,6 +112,7 @@ for($i = 0; $i < 6; $i++)  {
   }else{
     echo "0";
   }
+  
 }
 
 /*for($i = '0'; $i < '5'; $i++){
