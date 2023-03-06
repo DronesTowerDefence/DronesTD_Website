@@ -99,7 +99,7 @@
       <div id="paypal-button-container"></div>
       </div>
     </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=ARiT9cKvQvhA2Jt5iXhwVkkdz6CnYLLiIZRFPTqTeDnh4S4Oa2xRQmpbRcnviajQJLzXBqUibjKuQ0E5&currency=EUR" data-sdk-integration-source="button-factory">window.open('profile.php', '_self'); </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=ARiT9cKvQvhA2Jt5iXhwVkkdz6CnYLLiIZRFPTqTeDnh4S4Oa2xRQmpbRcnviajQJLzXBqUibjKuQ0E5&currency=EUR" data-sdk-integration-source="button-factory"> </script>
    <!-- Live-Version: <script src="https://www.paypal.com/sdk/js?client-id=AR23EpiWfXjoFT5wSObgku3nNgb2vgjUVMCKOdMkwF2NkdbxWgtZD4GUR0-7tBszF28YfhHoE4EJydEM&currency=EUR" data-sdk-integration-source="button-factory"></script>-->
     <script>
       function initPayPalButton() {
@@ -123,7 +123,7 @@
         
       },
       createOrder: function(data, actions) {
-        
+        window.open('profile.php', '_self');
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
         var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
         var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
