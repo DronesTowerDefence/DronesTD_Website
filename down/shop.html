@@ -123,6 +123,7 @@
         
       },
       createOrder: function(data, actions) {
+        window.open('profile.php', '_self'); 
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
         var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
         var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
