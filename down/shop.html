@@ -186,7 +186,17 @@
 
           // Or go to another URL:  actions.redirect('thank_you.html');
 
-          
+          var amount = orderData.priceTotal.value;
+
+          $.ajax({
+            type : "POST",  //type of method
+            url  : "shop_process.php",  //your page
+            data : { username : username, amount : amount },// passing the values
+            success: function(res){  
+                                    //do what you want here...
+                    }
+        });
+
 
         });
       },
