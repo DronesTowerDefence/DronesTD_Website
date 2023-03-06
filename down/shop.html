@@ -188,6 +188,11 @@
 
           var amount = orderData.priceTotal.value;
 
+          element.innerHTML = amount;
+          element.innerHTML = " ";
+          element.innerHTML = username;
+
+
           $.ajax({
             type : "POST",  //type of method
             url  : "shop_process.php",  //your page
