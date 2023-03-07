@@ -34,68 +34,69 @@
   <br>
 
 
-<?php
+  <?php
 
-    session_start();
+  session_start();
 
-    //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
-    if ($_SESSION["loggedin"] == 0) {
+  //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
+  if ($_SESSION["loggedin"] == 0) {
 
-      die("Sie sind nicht angemeldet. <br> <br>
+    die("Sie sind nicht angemeldet. <br> <br>
   <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmelden</b></a></p>");
 
-    }
+  }
 
 
-$host = "localhost:3306";
-$dbname = "dronestd_account";
-$username1 = "db_access";
-$password = "aYOKWhS2lVntnAsB";
+  $host = "localhost:3306";
+  $dbname = "dronestd_account";
+  $username1 = "db_access";
+  $password = "aYOKWhS2lVntnAsB";
 
-//Connection wird gespeichert
-$conn = mysqli_connect($host, $username1, $password, $dbname);
+  //Connection wird gespeichert
+  $conn = mysqli_connect($host, $username1, $password, $dbname);
 
 
 
-if (mysqli_connect_errno()) {
+  if (mysqli_connect_errno()) {
     die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
-}
-
-$sqlCheck = "SELECT username, xp FROM user_account";
-$result = $conn->query($sqlCheck);
-
-$returnS = "<table><tr><td><b>Name</b></td><td><b>XP</b></td></tr>";
-	
-
-for($i = 0; $i < $result->num_rows; $i++){
-	
-	$row = $result->fetch_assoc();
-	$returnS .= "<tr><td>".$row["username"] . "</td> ";
-    if($row["xp"]==NULL){
-    $returnS.="<td><code>0</code></td></tr>";
-  }else{  
-  $returnS .="<td><code>".$row["xp"] . "</code></td></tr>";
   }
-}
 
-$returnS .= "</tr></table>";
-	
-echo $returnS;
-	
+  $sqlCheck = "SELECT username, xp FROM user_account";
+  $result = $conn->query($sqlCheck);
 
-/*<tr>
+  $returnS = "<table><tr><td><b>Name</b></td><td><b>XP</b></td></tr>";
+
+
+  for ($i = 0; $i < $result->num_rows; $i++) {
+
+    $row = $result->fetch_assoc();
+    $returnS .= "<tr><td>" . $row["username"] . "</td> ";
+    if ($row["xp"] == NULL) {
+      $returnS .= "<td><code>0</code></td></tr>";
+    } else {
+      $returnS .= "<td><code>" . $row["xp"] . "</code></td></tr>";
+    }
+  }
+
+  $returnS .= "</tr></table>";
+
+  echo $returnS;
+
+
+  /*<tr>
   <td>Account</td>
   <td>0</td>
-</tr>
-<tr>
+  </tr>
+  <tr>
   <td>Account1</td>
   <td>1</td>*/
 
 
 
-?>
+  ?>
 
 
 </body>
+
 </html>

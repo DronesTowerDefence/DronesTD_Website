@@ -86,7 +86,7 @@ if ($result->num_rows > 0) {
     die("Username schon verwendet oder die Email ist bereits mit einem Account verknüpft!
     <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
-    
+
 
 }
 
@@ -106,9 +106,11 @@ if (!mysqli_stmt_prepare($stmt, $sql)) { //Verbindung wird hier aufgebaur
 
 }
 
-mysqli_stmt_bind_param( //Hier werden die Platzhalter aufgefüllt
+mysqli_stmt_bind_param(
+    //Hier werden die Platzhalter aufgefüllt
     $stmt,
-    "sss", //sss für 3x String, die aufgefüllt werden
+    "sss",
+    //sss für 3x String, die aufgefüllt werden
     $username,
     $email,
     $passwort
@@ -123,4 +125,3 @@ echo "Ihr Account wurde erstellt!
 
 //Schließen der Datenbank
 $conn->close();
-

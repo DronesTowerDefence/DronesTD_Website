@@ -292,8 +292,7 @@ button,
 select,
 input[type='submit'],
 input[type='button'],
-input[type='checkbox']
-{
+input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -359,14 +358,18 @@ textarea {
 
 
 
-button, input[type='submit'],input[type='button'] {
+button,
+input[type='submit'],
+input[type='button'] {
   background-color: #0c151c;
   background-color: var(--button-base);
   padding-right: 30px;
   padding-left: 30px;
 }
 
-button:hover, input[type='submit']:hover,input[type='button']:hover {
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
   background: #040a0f;
   background: var(--button-hover);
 }
