@@ -7,9 +7,14 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+  <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
   <script src="https://kit.fontawesome.com/ae32d225a7.js" crossorigin="anonymous"></script>
   <title>Profil</title>
 </head>
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
 
 <body>
 
