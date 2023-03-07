@@ -41,9 +41,25 @@
   //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
   if ($_SESSION["loggedin"] == 0) {
 
-    die("Sie sind nicht angemeldet. <br> <br>
-  <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmelden</b></a></p>");
+    echo " 
+    <script type=\"text/javascript\">
+    
+    window.open('sign-in.php', '_self'); 
+    
+    </script>
+    ";
 
+  }
+
+  if (!isset($_SESSION["loggedin"])) {
+
+    echo " 
+    <script type=\"text/javascript\">
+    
+    window.open('sign-in.php', '_self'); 
+    
+    </script>
+    ";
   }
 
 
