@@ -1,116 +1,110 @@
-.floatRight{float:left; border-style: solid; border-color: black;}
+.floatRight {
+  float: left;
+  border-style: solid;
+  border-color: black;
+}
 
 #navigation {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
 
-  }
-
-
-
- 
-
+}
 
 #navigation_li {
-    display: block;
-    width: 60px;
-    background-color: #dddddd;
-  }
+  display: block;
+  width: 60px;
+  background-color: #dddddd;
+}
 
-  #navigation_li:hover {
-   /* background-color: #555; */
-    color: white;
-  }
+#navigation_li:hover {
+  /* background-color: #555; */
+  color: white;
+}
 
 
-  .navbar {
-    overflow: hidden;
-   
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
+.navbar {
+  overflow: hidden;
 
-  /* Nur Dropdown titel in liste */
+}
 
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color:white;
-    padding: 14px 16px;
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Nur Dropdown titel in liste */
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
   background-color: #222222;
-    font-family: inherit;
-    margin: 0;
-  }
-  
+  font-family: inherit;
+  margin: 0;
+}
 
 
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
 
-
-
-
-
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: black;
-  }
-  
 /* Dropdown background*/
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color:black;
-    min-width: 145px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 145px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
 /* Schrift in DropdownMenu */
 
-  .dropdown-content a {
-    float: none;
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
 
-  
-  .navbar a.active {
 
-background-color: black;
-color:white;
-  }
-    
+.navbar a.active {
+
+  background-color: black;
+  color: white;
+}
+
 
 /*->*/
 
-
+/*root ist identisch mit dem <html> Tag*/
 :root {
   --background-body: #202b38;
   --background: #161f27;
@@ -135,21 +129,9 @@ color:white;
   --select-arrow: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23efefef'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E");
 }
 
-
-
-
 html {
   scrollbar-color: #040a0f #202b38;
   scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-}
-
-
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
 }
 
 
@@ -160,21 +142,13 @@ body {
   margin: 20px auto;
   padding: 0 10px;
   word-wrap: break-word;
-  color: #363636;
+  color: #dbdbdb;
   color: var(--text-main);
   background: #202b38;
   background: var(--background-body);
   text-rendering: optimizeLegibility;
 }
 
-
-@media (prefers-color-scheme: dark) {
-
-  body {
-  color: #dbdbdb;
-  color: var(--text-main);
-  }
-}
 
 button {
   transition:
@@ -192,7 +166,7 @@ button {
 }
 
 
- input {
+input {
   transition:
     background-color 0.1s linear,
     border-color 0.1s linear,
@@ -208,9 +182,7 @@ button {
 }
 
 
-
-
-  textarea {
+textarea {
   transition:
     background-color 0.1s linear,
     border-color 0.1s linear,
@@ -223,9 +195,7 @@ button {
     color var(--animation-duration) linear,
     box-shadow var(--animation-duration) linear,
     transform var(--animation-duration) ease;
-  }
-
-
+}
 
 
 h1,
@@ -236,11 +206,12 @@ h5,
 h6,
 b,
 strong,
-th 
-{
+th {
   margin-bottom: 12px;
   margin-top: 24px;
   font-weight: 600;
+  color: #fff;
+  color: var(--text-bright);
 }
 
 h1 {
@@ -249,43 +220,6 @@ h1 {
   color: #fff;
   color: var(--text-bright);
 }
-
-h2 {
-  color: #fff;
-  color: var(--text-bright);
-}
-
-
-h3 {
-  color: #fff;
-  color: var(--text-bright);
- }
-
-
-  h4 {
-  color: #fff;
-  color: var(--text-bright);
-  }
-
-
-
-  h5 {
-  color: #fff;
-  color: var(--text-bright);
-  }
-
-
-  h6 {
-  color: #fff;
-  color: var(--text-bright);
-  }
-
-
-
-  strong {
-  color: #fff;
-  color: var(--text-bright);
-  }
 
 
 h1,
@@ -319,8 +253,6 @@ q {
   font-style: italic;
 }
 
-
-
 blockquote cite {
   font-style: normal;
 }
@@ -351,18 +283,17 @@ mark {
 }
 
 
-a > code,
-a > strong {
+a>code,
+a>strong {
   color: inherit;
 }
 
 button,
 select,
 input[type='submit'],
-input[type='reset'],
 input[type='button'],
-input[type='checkbox'],
-input[type='range']{
+input[type='checkbox']
+{
   cursor: pointer;
 }
 
@@ -389,6 +320,7 @@ input {
   border: none;
   border-radius: 6px;
   outline: none;
+  vertical-align: top;
 }
 
 
@@ -411,7 +343,7 @@ button {
 
 
 textarea {
-    color: #fff;
+  color: #fff;
   color: var(--form-text);
   background-color: #161f27;
   background-color: var(--background);
@@ -427,116 +359,16 @@ textarea {
 
 
 
-button {
+button, input[type='submit'],input[type='button'] {
   background-color: #0c151c;
   background-color: var(--button-base);
   padding-right: 30px;
   padding-left: 30px;
 }
 
-
-
-input[type='submit'] {
-  background-color: #d0cfcf;
-  background-color: var(--button-base);
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='submit'] {
-  background-color: #0c151c;
-  background-color: var(--button-base);
-  }
-}
-
-input[type='reset'] {
-  background-color: #d0cfcf;
-  background-color: var(--button-base);
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='reset'] {
-  background-color: #0c151c;
-  background-color: var(--button-base);
-  }
-}
-
-input[type='button'] {
-  background-color: #d0cfcf;
-  background-color: var(--button-base);
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='button'] {
-  background-color: #0c151c;
-  background-color: var(--button-base);
-  }
-}
-
-button:hover {
-  background: #9b9b9b;
-  background: var(--button-hover);
-}
-
-@media (prefers-color-scheme: dark) {
-
-  button:hover {
+button:hover, input[type='submit']:hover,input[type='button']:hover {
   background: #040a0f;
   background: var(--button-hover);
-  }
-}
-
-input[type='submit']:hover {
-  background: #9b9b9b;
-  background: var(--button-hover);
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='submit']:hover {
-  background: #040a0f;
-  background: var(--button-hover);
-  }
-}
-
-input[type='reset']:hover {
-  background: #9b9b9b;
-  background: var(--button-hover);
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='reset']:hover {
-  background: #040a0f;
-  background: var(--button-hover);
-  }
-}
-
-input[type='button']:hover {
-  background: #9b9b9b;
-  background: var(--button-hover);
-}
-
-@media (prefers-color-scheme: dark) {
-
-  input[type='button']:hover {
-  background: #040a0f;
-  background: var(--button-hover);
-  }
-}
-
-input[type='color'] {
-  min-height: 2rem;
-  padding: 8px;
-  cursor: pointer;
 }
 
 input[type='checkbox'],
@@ -545,27 +377,7 @@ input[type='radio'] {
   width: 1em;
 }
 
-input[type='radio'] {
-  border-radius: 100%;
-}
 
-input {
-  vertical-align: top;
-}
-
-label {
-  vertical-align: middle;
-  margin-bottom: 4px;
-  display: inline-block;
-}
-
-input:not([type='checkbox']):not([type='radio']),
-input[type='range'],
-select,
-button,
-textarea {
-  -webkit-appearance: none;
-}
 
 textarea {
   display: block;
@@ -574,20 +386,9 @@ textarea {
   resize: vertical;
 }
 
-textarea:not([cols]) {
-  width: 100%;
-}
-
-textarea:not([rows]) {
-  min-height: 40px;
-  height: 140px;
-}
-
 
 input[type='checkbox']:active,
-input[type='radio']:active,
 input[type='submit']:active,
-input[type='reset']:active,
 input[type='button']:active,
 button:active {
   transform: translateY(2px);
@@ -599,12 +400,6 @@ button:disabled,
 textarea:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-}
-
-
-legend {
-  font-size: 0.9em;
-  font-weight: 600;
 }
 
 a {
@@ -635,10 +430,10 @@ video {
 }
 
 
-  hr {
+hr {
   border-top: 1px solid #526980;
   border-top: 1px solid var(--border);
-  }
+}
 
 table {
   border-collapse: collapse;
@@ -647,9 +442,6 @@ table {
   table-layout: fixed;
 }
 
-table caption {
-  text-align: left;
-}
 
 td,
 th {
@@ -669,61 +461,6 @@ footer {
 }
 
 
-body > footer {
+body>footer {
   margin-top: 40px;
 }
-
-@media print {
-  body,
-  pre,
-  code,
-  summary,
-  details,
-  button,
-  input,
-  textarea {
-    background-color: #fff;
-  }
-
-  button,
-  input,
-  textarea {
-    border: 1px solid #000;
-  }
-
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  pre,
-  code,
-  button,
-  input,
-  textarea,
-  footer,
-  summary,
-  strong {
-    color: #000;
-  }
-
-  summary::marker {
-    color: #000;
-  }
-
-  summary::-webkit-details-marker {
-    color: #000;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-
-  a {
-    color: #00f;
-    text-decoration: underline;
-  }
-}
-
