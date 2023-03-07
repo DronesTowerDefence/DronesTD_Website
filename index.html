@@ -2,6 +2,18 @@
 <!doctype html>
 <html id="html" lang="de" class=dn>
 
+<script>
+  (function(){
+    let text = "Cookies erlauben?";
+    if (confirm(text) == true) {
+  //Leer
+    } else {
+      history.back()
+    }
+    //document.getElementById("demo").innerHTML = text;
+  }())
+  </script>
+
 <head>
   <link rel="icon"href="img/icon.png">
     <meta charset="utf-8">
