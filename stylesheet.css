@@ -136,11 +136,13 @@ color:white;
 }
 
 
+
+
 html {
-  scrollbar-color: rgb(170, 170, 170) #fff;
+  scrollbar-color: #040a0f #202b38;
   scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  scrollbar-width: thin;
 }
+
 
 @media (prefers-color-scheme: dark) {
 
@@ -150,45 +152,6 @@ html {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-
-  html {
-  scrollbar-color: #040a0f #202b38;
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  }
-}
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
@@ -199,18 +162,11 @@ body {
   word-wrap: break-word;
   color: #363636;
   color: var(--text-main);
-  background: #fff;
+  background: #202b38;
   background: var(--background-body);
   text-rendering: optimizeLegibility;
 }
 
-@media (prefers-color-scheme: dark) {
-
-  body {
-  background: #202b38;
-  background: var(--background-body);
-  }
-}
 
 @media (prefers-color-scheme: dark) {
 
@@ -235,25 +191,8 @@ button {
     transform var(--animation-duration) ease;
 }
 
-@media (prefers-color-scheme: dark) {
 
-  button {
-  transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
-  transition:
-    background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-  }
-}
-
-input {
+ input {
   transition:
     background-color 0.1s linear,
     border-color 0.1s linear,
@@ -268,23 +207,6 @@ input {
     transform var(--animation-duration) ease;
 }
 
-@media (prefers-color-scheme: dark) {
-
-  input {
-  transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
-  transition:
-    background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-  }
-}
 
 textarea {
   transition:
