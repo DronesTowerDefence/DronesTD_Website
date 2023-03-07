@@ -1,11 +1,10 @@
-
-<!doctype html>
 <script>
 Cache-Control: no-cache, must-revalidate
 Cache-Control: no-store
 </script>
-<html id="html" lang="de" class=dn>
 
+<!doctype html>
+<html id="html" lang="de" class=dn>
 <head>
   <link rel="icon" href="img/icon.png">
   <meta charset="utf-8">
