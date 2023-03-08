@@ -3,15 +3,19 @@
 <html id="html" lang="de" class=dn>
 
 <script>
+
+if(document.cookie==""){
   (function(){
     let text = "Cookies erlauben?";
     if (confirm(text) == true) {
-  //Leer
+      document.cookie = "cookies=1";
     } else {
       history.back()
     }
     //document.getElementById("demo").innerHTML = text;
   }())
+  
+  };
   </script>
 
 <head>
