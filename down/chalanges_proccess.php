@@ -99,7 +99,6 @@ $sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Leben, Karte ,Turm1, Tur
 VALUES('$geld','$beginn','$ende' ,'$leben' ,'$karte' ,  '$t1' , '$t2' , '$t3' , '$t4' , '$t5')";
 //die Daten preisgeben soll) zu verhinder.
 
-var_dump($sql);
 $conn->query($sql);
 
 echo "Aufgabe Erstellt
