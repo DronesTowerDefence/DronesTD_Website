@@ -2,6 +2,22 @@
 <!doctype html>
 <html id="html" lang="de" class=dn>
 
+<script>
+
+if(document.cookie==""){
+  (function(){
+    let text = "Cookies erlauben?";
+    if (confirm(text) == true) {
+      document.cookie = "cookies=1";
+    } else {
+      history.back()
+    }
+    //document.getElementById("demo").innerHTML = text;
+  }())
+  
+  };
+  </script>
+
 <head>
   <link rel="icon"href="img/icon.png">
     <meta charset="utf-8">
@@ -23,10 +39,10 @@
 
 <br> 
 <hr>
-<!--Dropdown Menu-->
+
 <div class="navbar">
   <a class="active" href=""><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-  <div class="dropdown">
+  <!--Dropdown Menu<div class="dropdown">
     <button class="dropbtn"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Onlineshop/Angebote (WIP)
       <i class="fa fa-caret-down"></i>
     </button>
@@ -37,8 +53,8 @@
     </div>
   </div>
 
-
- 
+-->
+<a href ="down/leaderboard.php" style="background-color: #222222;"><i class="fa fa-compass" aria-hidden="true" style="background-color: #222222;"></i> &nbsp; Rangliste</a>
   <a href ="down/sign-in.php" style="background-color: #222222;"><i class="fa fa-compass" aria-hidden="true" style="background-color: #222222;"></i> &nbsp; Profil</a>
   <a href ="down/chalanges.php" style="background-color: #222222;"><i class="fa fa-compass" aria-hidden="true" style="background-color: #222222;"></i> &nbsp; Aufgaben</a>
  <a href ="down/impressum.html" style="background-color: #222222;"><i class="fa fa-users" aria-hidden="true" "></i> &nbsp; Impressum</a>
@@ -59,12 +75,12 @@
 
 <h2>
 
-<b> Accountsystem ist nun in der Beta! <br> 
+<b> Willkommen bei DTD! <br> 
 
 </b>
 
 </h2>
-
+<br>
 
 
 
@@ -98,6 +114,9 @@ DronesTowerDefence.v1.2.zip  )
 
 </ul>
 <br>
+
+<h3 id="link-snippet-headline"> Infos über unser Spiel könnt ihr im<code>&lt;Wiki&gt;</code> nachlesen! </h3>
+<p><a href="https://www.wiki.dronestd.de">-><i>Wiki</i></a></p>
 <br> 
 
 

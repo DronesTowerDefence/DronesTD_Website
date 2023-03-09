@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 session_start();
@@ -25,19 +25,19 @@ if (mysqli_connect_errno()) { //falls kaputt
 }
 
 //Abfrage wird als String gespeichert
- $sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION[username]'";
+$sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION[username]'";
 
 $result = $conn->query($sqlCheck);
 
 
- $_SESSION["loggedin"] = 0;
- //Gespeicherte Seyssions werden gelöscht.
- unset($_SESSION["username"]);
- unset($_SESSION["email"]);
+$_SESSION["loggedin"] = 0;
+//Gespeicherte Seyssions werden gelöscht.
+unset($_SESSION["username"]);
+unset($_SESSION["email"]);
 
 
- //Weiterleitung 
- echo"
+//Weiterleitung 
+echo "
  <script type=\"text/javascript\">
  
  window.open('../index.html', '_self'); 

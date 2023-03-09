@@ -41,6 +41,10 @@ if ($result->num_rows == 0) {
 
 }
 
+//CSS hierhin:
+
+//::
+
 //fetch_assoc übergibt die erste Spalte.(in einer Forshcleife geht es automatisch zur nächsten Spalte bei jedem Aufruf,
 //aber da wir nur einen User mit den Daten haben, gibt es nur einen Aufruf)
 //Nun können wir mit nennen des Attributnamen der DB den Inhalt in $row zwischenspeichern

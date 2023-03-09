@@ -41,7 +41,8 @@ if (!isset($_SESSION["admin"])) {
   window.open('https://www.dronestd.de', '_self'); 
   
   </script>
-  ";}
+  ";
+}
 if ($_SESSION["admin"] != "1") {
   echo " 
   <script type=\"text/javascript\">
@@ -49,7 +50,8 @@ if ($_SESSION["admin"] != "1") {
   window.open('https://www.dronestd.de', '_self'); 
   
   </script>
-  ";}
+  ";
+}
 
 
 ?>

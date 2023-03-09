@@ -1,0 +1,238 @@
+<!doctype html>
+<html id="html" lang="de" class=dn>
+
+  <head>
+    <link rel="icon" href="img/icon.png">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ae32d225a7.js"
+      crossorigin="anonymous"></script>
+    <title>Shop</title>
+  </head>
+
+  <body>
+
+    <h1>
+      <b>Drones TD</b>
+    </h1>
+
+
+
+
+
+    <p>Dronenspaß für den Single- und Multiplayer!</p>
+
+    <br>
+    <hr>
+
+
+
+    <div class="navbar">
+      <a href="../index.html" style="background-color: #222222;"><i class="fa
+          fa-home" aria-hidden="true"></i> &nbsp; Home</a>
+
+      <br>
+      <body>
+        <br>
+
+        <img src="../img/coinsIcon.png" height="220" width="220" alt="coinsIcon"
+          title="coinsIcon" border="2" align="right" hspace="50" vspace="50">
+        <!---->
+        <br>
+        <div style="text-align: left;">
+
+          <b><p style=color:chocolate> SCHALTE COOLE INGAME-ITEMS IM SHOP FREI:</p></b>
+          Kauf dir noch heute die coolsten DTD-Münzen! Im Spiel kannst
+          du dir im Shop damit kosmetische Gegenstände kaufen!
+          (Auch durch normales Spielen verdienbar)
+          <br>
+          <br>
+
+          <table>
+            <tr>
+              <th>Anzahl: </th>
+              <th>Preis:</th>
+
+            </tr>
+            <tr>
+              <td>300</td>
+              <td>1€</td>
+
+            </tr>
+            <tr>
+              <td>800 (+200 BONUS)</td>
+              <td>2€</td>
+
+            </tr>
+            <tr>
+
+              <td>2500 (+ 1000 BONUS)</td>
+              <td>5€</td>
+
+
+
+
+            </tr>
+          </table>
+          <br>
+          Username eingeben:
+          <input type="text" id="myText" value="username">
+
+          <br>
+
+          Exklusiv! Lohnt sich! Musst du haben!
+
+          <br>
+
+          <p style=color:green> --VEGAN-- </p>
+          <!--d-->
+        </div>
+
+        <div id="smart-button-container">
+          <div style="text-align: center;">
+            <div style="margin-bottom: 1.25rem;">
+              <p>Ingame-Currency for DDT</p>
+              <select id="item-options"><option value="300 Coins" price="1">300
+                  Coins - 1 EUR</option><option value="800 Coins " price="2">800
+                  Coins - 2 EUR</option><option value="2500" price="5">2500 - 5
+                  EUR</option></select>
+              <select style="visibility: hidden" id="quantitySelect"></select>
+            </div>
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+        <script
+          src="https://www.paypal.com/sdk/js?client-id=ARiT9cKvQvhA2Jt5iXhwVkkdz6CnYLLiIZRFPTqTeDnh4S4Oa2xRQmpbRcnviajQJLzXBqUibjKuQ0E5&currency=EUR"
+          data-sdk-integration-source="button-factory"> </script>
+        <!-- Live-Version: <script src="https://www.paypal.com/sdk/js?client-id=AR23EpiWfXjoFT5wSObgku3nNgb2vgjUVMCKOdMkwF2NkdbxWgtZD4GUR0-7tBszF28YfhHoE4EJydEM&currency=EUR" data-sdk-integration-source="button-factory"></script>-->
+        <script>
+      function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt();
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+    if (!isNaN(quantity)) {
+      quantitySelect.style.visibility = "visible";
+    }
+    var orderDescription = 'Ingame-Currency for DDT';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
+    paypal.Buttons({
+      style: {
+        shape: 'pill',
+        color: 'gold',
+        layout: 'horizontal',
+        label: 'buynow',
+        
+      },
+      createOrder: function(data, actions) {
+        var username = document.getElementById("myText").value;
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'EUR',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'EUR',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'EUR',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'EUR',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'EUR',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
+          var amount = orderData.priceTotal.value;
+
+          element.innerHTML = amount;
+          element.innerHTML = " ";
+          element.innerHTML = username;
+
+
+          $.ajax({
+            type : "POST",  //type of method
+            url  : "shop_process.php",  //your page
+            data : { username : username, amount : amount },// passing the values
+            success: function(res){  
+                                    //do what you want here...
+                                    element.innerHTML = '<h3>funkt</h3>';
+
+                    }
+        });
+
+
+        });
+      },
+      onError: function(err) {
+        console.log(err);
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+    </script>
+      </p>
+
+      <br>
+
+      <cite>
+
+        :)
+
+      </cite>
+
+      <br>
+      <br>
+      <br>
+
+
+
+    </body>
+
+  </html>
