@@ -1,3 +1,5 @@
+/*CSS-Datei habe ich erweitert aus meiner E-Phase Website*/
+
 .floatRight {
   float: left;
   border-style: solid;
@@ -149,7 +151,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
+/*Transition bei Klick (Danke Stackoverflow)*/
 button {
   transition:
     background-color 0.1s linear,
@@ -213,27 +215,13 @@ th {
   color: #fff;
   color: var(--text-bright);
 }
-
+/*h1 Überschreiben*/
 h1 {
   font-size: 2.2em;
   margin-top: 0;
   color: #fff;
   color: var(--text-bright);
 }
-
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-strong,
-th {
-  font-weight: 600;
-}
-
 
 
 blockquote {
