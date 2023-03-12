@@ -188,10 +188,11 @@
           /*element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
 
           // Or go to another URL:  actions.redirect('thank_you.html');
+          var direct = "shop_process.php?username=" + username + "&amount="+ amount;
 
-          window.open('shop_process.php?username='+username+'&amount='+amount, '_self'); 
+          window.open(direct, '_self'); 
           
-
+          element.innerHTML = direct;
 
 
 
