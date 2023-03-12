@@ -181,12 +181,14 @@
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
           var username = document.getElementById("myText").value;
+          var amount = orderData.id;
           //var amount = orderData.getElementById("value").value;
           // Show a success message within this page, e.g.
           const element = document.getElementById('paypal-button-container');
           element.innerHTML = '';
           /*element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
          // var amount = order.priceTotal;
+          var amount
          // console.log(amount);
           console.log("Amount angekommen?");
           // Or go to another URL:  actions.redirect('thank_you.html');
