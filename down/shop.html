@@ -181,7 +181,7 @@
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
           var username = document.getElementById("myText").value;
-          var amount = orderData.itemTotalValue;
+          var amount = orderData.value;
           // Show a success message within this page, e.g.
           const element = document.getElementById('paypal-button-container');
           element.innerHTML = '';
