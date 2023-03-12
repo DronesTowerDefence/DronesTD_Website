@@ -12,7 +12,6 @@ if($amount == 1){
     $add = 2500;
 }
 
-echo $username ." ". $amount ." ". $add;
 
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
@@ -30,5 +29,23 @@ if (mysqli_connect_errno()) { //falls kaputt
 $sqlCheck = "UPDATE user_account SET coins = coins + '$add' WHERE username = '$username'";
 
 $result = $conn->query($sqlCheck);
+
+echo "
+ <script type=\"text/javascript\">
+ 
+ (function(){
+    let text = 'KAUF ERFOLGREICH!';
+    if (confirm(text) == true) {
+        window.open('../index.html', '_self');
+    } else {
+        window.open('../index.html', '_self'); 
+    }
+   
+  }())
+
+ window.open('../index.html', '_self'); 
+ 
+ </script>";
+
 
 ?>
