@@ -42,7 +42,7 @@ if ($result->num_rows == 0) {
 }
 $row = $result->fetch_assoc();
 
-if(!password_verify($passwort, $row["passwort"])){
+if(password_verify($passwort, $row["passwort"])){
 
     die("Passwort stimmt nicht überein!
     <br><br> Hier gehts zurück: 
