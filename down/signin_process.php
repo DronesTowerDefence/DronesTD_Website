@@ -42,7 +42,7 @@ if ($result->num_rows == 0) {
 }
 $row = $result->fetch_assoc();
 
-if(!password_verify($password, $row["passwort"])){
+if(password_verify($password, $row["passwort"])){
 
     die("Anmeldedaten sind falsch!PA
     <br><br> Hier gehts zurück: 
