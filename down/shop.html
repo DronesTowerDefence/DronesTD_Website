@@ -178,7 +178,7 @@
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(orderData) {
-          
+          var amount = orderData.priceTotal.value;
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
 
@@ -188,12 +188,11 @@
           /*element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
 
           // Or go to another URL:  actions.redirect('thank_you.html');
-          var direct = "shop_process.php?username=" + username + "&amount="+ amount;
+          window.open("https://www.dronestd.de/down/shop_process.php?username="+username+"&amount="+amount , "", "width=300,height=300");
 
-          window.open(direct, '_self'); 
+         
           
-          element.innerHTML = direct;
-
+         
 
 
 
