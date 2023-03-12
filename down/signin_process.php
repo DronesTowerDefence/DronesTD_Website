@@ -44,7 +44,7 @@ $row = $result->fetch_assoc();
 
 if(!password_verify($passwort, $row["passwort"])){
 
-    die("Anmeldedaten sind falsch!
+    die("Passwort stimmt nicht überein!
     <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
 
