@@ -52,7 +52,18 @@
 
   }
 
-
+  $host = "localhost:3306"; //Datenbankdetails
+  $dbname = "dronestd_account";
+  $username1 = "db_access";
+  $password = "aYOKWhS2lVntnAsB";
+  $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
+  if (mysqli_connect_errno()) { //falls kaputt
+  die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
+  <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
+  }
+  $sqlCheck = "SELECT coins FROM user_account WHERE username = '$_SESSION[username]'";
+  $result = $conn->query($sqlCheck);
+  $row = $result->fetch_assoc();
 
 
   //Bildname ist mit Username gespeichert. Da Sessions (Username ist dort gespeichert) nur mit PHP ausgelesen werden können,
@@ -75,6 +86,7 @@ Nutzername: <code>" . $_SESSION["username"] . " </code>
 <br> 
 Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
+Coins: <code>" . $row["coins"] . "</code>
 <br>
 <h2> Statistiken: </h2>
 <br>
