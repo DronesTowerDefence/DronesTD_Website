@@ -26,7 +26,7 @@ if (mysqli_connect_errno()) {
 
 //Checkt nach eingegebene AnmeldeDaten
 
-$sqlCheck = "SELECT username, email, passwort admin FROM user_account WHERE 
+$sqlCheck = "SELECT username, email, passwort FROM user_account WHERE 
 email = '$email'";
 
 $result = $conn->query($sqlCheck);
