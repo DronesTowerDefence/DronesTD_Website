@@ -27,7 +27,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 }
 
 //Abfrage wird als String gespeichert
-$sqlCheck = "UPDATE user_account SET coins += '$add' WHERE username = '$username'";
+$sqlCheck = "UPDATE user_account SET coins = 'coins + $add' WHERE username = '$username'";
 
 $result = $conn->query($sqlCheck);
 
