@@ -12,6 +12,8 @@ if($amount == 1){
     $add = 2500;
 }
 
+echo $username ." ". $amount ." ". $add;
+
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
 $username1 = "db_access";
