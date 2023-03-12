@@ -13,6 +13,7 @@ $_SESSION["loggedin"] = 0;
 //Gespeicherte Seyssions werden gelöscht.
 unset($_SESSION["username"]);
 unset($_SESSION["email"]);
+unset($_SESSION["admin"]);
 
 //Weiterleitung 
 echo "

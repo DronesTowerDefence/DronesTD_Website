@@ -94,8 +94,7 @@ if ($result->num_rows > 0) {
 //Eintragen der Daten
 
 $sql = "INSERT INTO user_account(username, email, passwort) 
-VALUES(?,?,?)"; // Die Fragezeichen sind Platzhalter, um eine SQL-Injection (vom User eingegebene Abfrage, 
-//die Daten preisgeben soll) zu verhindern.
+VALUES(?,?,?)"; // Die Fragezeichen sind Platzhalter, u
 
 $stmt = mysqli_stmt_init($conn); //Zwischenschritt.
 
@@ -106,6 +105,8 @@ if (!mysqli_stmt_prepare($stmt, $sql)) { //Verbindung wird hier aufgebaur
 
 }
 
+$p = password_hash($passwort,PASSWORD_DEFAULT);
+
 mysqli_stmt_bind_param(
     //Hier werden die Platzhalter aufgefüllt
     $stmt,
@@ -113,7 +114,7 @@ mysqli_stmt_bind_param(
     //sss für 3x String, die aufgefüllt werden
     $username,
     $email,
-    $passwort
+    $p
 );
 
 mysqli_stmt_execute($stmt); //Ausführen der Abfrage

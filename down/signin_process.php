@@ -26,14 +26,23 @@ if (mysqli_connect_errno()) {
 
 //Checkt nach eingegebene AnmeldeDaten
 
-$sqlCheck = "SELECT username, email , admin FROM user_account WHERE 
-email = '$email' AND passwort = '$passwort'";
+$sqlCheck = "SELECT username, email, passwort admin FROM user_account WHERE 
+email = '$email'";
 
 $result = $conn->query($sqlCheck);
 
 
 //Wenn keine Ergebnisse, Anmeldedaten falsch
 if ($result->num_rows == 0) {
+
+    die("Anmeldedaten sind falsch!
+    <br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
+
+}
+$row = $result->fetch_assoc();
+
+if(!password_verify($password, $row["passwort"])){
 
     die("Anmeldedaten sind falsch!
     <br><br> Hier gehts zurück: 
@@ -49,7 +58,7 @@ if ($result->num_rows == 0) {
 //aber da wir nur einen User mit den Daten haben, gibt es nur einen Aufruf)
 //Nun können wir mit nennen des Attributnamen der DB den Inhalt in $row zwischenspeichern
 
-$row = $result->fetch_assoc();
+
 $username = $row["username"];
 $admin = $row["admin"];
 

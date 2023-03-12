@@ -52,6 +52,7 @@ $conn->close();
 $_SESSION["loggedin"] = 0;
 unset($_SESSION["username"]);
 unset($_SESSION["email"]);
+unset($_SESSION["admin"]);
 
 
 /*echo "
