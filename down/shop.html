@@ -177,11 +177,11 @@
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(orderData) {
-          //var amount = orderData.priceTotal.value;
+          
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
           var username = document.getElementById("myText").value;
-          var amount = orderData.purchase_units.amount.value;
+          var amount = orderData;
           // Show a success message within this page, e.g.
           const element = document.getElementById('paypal-button-container');
           element.innerHTML = '';
