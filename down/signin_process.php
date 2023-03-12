@@ -42,9 +42,9 @@ if ($result->num_rows == 0) {
 }
 $row = $result->fetch_assoc();
 
-if(password_verify($password, $row["passwort"])){
+if(!password_verify($passwort, $row["passwort"])){
 
-    die("Anmeldedaten sind falsch!PA
+    die("Anmeldedaten sind falsch!
     <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
 
