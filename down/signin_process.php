@@ -44,7 +44,7 @@ if ($result->num_rows == 0) {
 //aber da wir nur einen User mit den Daten haben, gibt es nur einen Aufruf)
 //Nun können wir mit nennen des Attributnamen der DB den Inhalt in $row zwischenspeichern
 $row = $result->fetch_assoc();
-
+//! hätte auch gereicht, 
 if(password_verify($passwort, $row["passwort"])){
     
 
@@ -70,7 +70,6 @@ if(password_verify($passwort, $row["passwort"])){
     //Shcließen der Datenbbank
     $conn->close();
 }else{
-    echo $passwort . $row["passwort"];
     die("Passwort stimmt nicht überein!
     <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
