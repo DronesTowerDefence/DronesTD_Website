@@ -50,11 +50,12 @@ $turm2 = $_POST["turm2"];
 $turm3 = $_POST["turm3"];
 $turm4 = $_POST["turm4"];
 $turm5 = $_POST["turm5"];
+$turm5 = $_POST["turm6"];
 
 
 
 //Falls der Haken nicht angeklickt wurde
-if ($turm1 == '' && $turm2 == '' && $turm3 == '' && $turm4 == '' && $turm5 == '') {
+if ($turm1 == '' && $turm2 == '' && $turm3 == '' && $turm4 == '' && $turm5 == '' && $$turm6 == '') {
     die("<h1>Fehler: Es muss mindestens ein Turm elaubt sein</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
@@ -63,11 +64,18 @@ if ($ende < $beginn) {
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
 
+if ($karte<1 || karte >4)
+{
+     die("<h1>Fehler: Gib eine gültige Kartennummer ein</h1> <br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
+}
+
 $t1 = 0;
 $t2 = 0;
 $t3 = 0;
 $t4 = 0;
 $t5 = 0;
+$t6 = 0;
 if ($turm1 == 'on')
     $t1 = 1;
 if ($turm2 == 'on')
@@ -78,6 +86,8 @@ if ($turm4 == 'on')
     $t4 = 1;
 if ($turm5 == 'on')
     $t5 = 1;
+if ($turm6 == 'on')
+    $t6 = 1;
 
 $host = "localhost:3306"; //Datenbankdetails
 $dbname = "dronestd_account";
@@ -96,7 +106,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 //Eintragen der Daten
 
 $sql = "INSERT INTO Aufgaben(Geld, RundeVon , RundeBis ,Leben, Karte ,Turm1, Turm2 , Turm3 , Turm4 , Turm5  ) 
-VALUES('$geld','$beginn','$ende' ,'$leben' ,'$karte' ,  '$t1' , '$t2' , '$t3' , '$t4' , '$t5')";
+VALUES('$geld','$beginn','$ende' ,'$leben' ,'$karte' ,  '$t1' , '$t2' , '$t3' , '$t4' , '$t5' , '$t6')";
 //die Daten preisgeben soll) zu verhinder.
 
 $conn->query($sql);

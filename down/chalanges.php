@@ -100,7 +100,7 @@ if ($_SESSION["admin"] != "1") {
       <input type="number" id="ende" name="ende" required maxlength="2" placeholder="1-100">
 
       <label for="ende">Hier kannst du die karte für die Aufgabe festlegen:</label>
-      <input type="number" id="karte" name="karte" required maxlength="1" placeholder="1-100">
+      <input type="number" id="karte" name="karte" required maxlength="1" placeholder="1-4">
 
       <br> <label for="leben">Gebe an, wieviele Leben man haben soll</label>
       <input type="number" id="leben" name="leben" required maxlength="3" placeholder="1-100">
@@ -123,6 +123,10 @@ if ($_SESSION["admin"] != "1") {
       </label> <br>
       <label>
         <input type="checkbox" name="turm5">
+        Turm 5 erlaubt
+      </label> <br>
+      <label>
+        <input type="checkbox" name="turm6">
         Turm 5 erlaubt
       </label> <br>
       <br>
