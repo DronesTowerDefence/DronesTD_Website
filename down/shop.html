@@ -128,7 +128,6 @@
         
       },
       createOrder: function(data, actions) {
-        var username = document.getElementById("myText").value;
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
         var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
         var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
@@ -181,7 +180,7 @@
           //var amount = orderData.priceTotal.value;
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
+          var username = document.getElementById("myText").value;
           // Show a success message within this page, e.g.
           const element = document.getElementById('paypal-button-container');
           element.innerHTML = '';
@@ -191,6 +190,8 @@
           window.open("https://www.dronestd.de/down/shop_process.php?username=w&amount=10" , "", "width=300,height=300");
         
          element.innerHTML = 'Thanks';
+         console.log(username);
+         console.log("username angekommen?");
           
          
 
