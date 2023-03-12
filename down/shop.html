@@ -181,6 +181,7 @@
           // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
           var username = document.getElementById("myText").value;
+          var amount = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
          
           //var amount = orderData.getElementById("value").value;
           // Show a success message within this page, e.g.
@@ -188,13 +189,11 @@
           element.innerHTML = '';
           /*element.innerHTML = '<h3>Thank you for your payment!</h3>';*/
          // var amount = order.priceTotal;
-          console.log(parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price")));
-         // console.log(amount);
-          console.log("Amount angekommen?");
+  element.innerHTML = 'Danke!';
           // Or go to another URL:  actions.redirect('thank_you.html');
-          window.open("https://www.dronestd.de/down/shop_process.php?username="+username+"w&amount=10" , "", "width=300,height=300");
+          window.open("https://www.dronestd.de/down/shop_process.php?username="+username+"&amount="+amount , "_self", "width=300,height=300");
         
-         element.innerHTML = 'Danke!';
+         
          
           
          
