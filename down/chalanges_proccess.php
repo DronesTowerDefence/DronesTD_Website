@@ -64,7 +64,7 @@ if ($ende < $beginn) {
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
 }
 
-if ($karte<1 || karte >4)
+if ($karte<1 || $karte >4)
 {
      die("<h1>Fehler: Gib eine gültige Kartennummer ein</h1> <br><br> Hier gehts zurück: 
     <a href='https://www.dronestd.de/down/chalanges.html'>-><b>Zum creator</b></a></p>");
