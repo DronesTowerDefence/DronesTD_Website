@@ -88,50 +88,12 @@ Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
 Coins: <code>" . $row["coins"] . "</code>
 <br>
-<h2> Statistiken: </h2>
 <br>
 <br>
-Kommt.
+<br>
+
 ";
-  /*
-  $host = "localhost:3306"; //Datenbankdetails
-  $dbname = "dronestd_account";
-  $username1 = "db_access";
-  $password = "aYOKWhS2lVntnAsB";
-  $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
-  if (mysqli_connect_errno()) { //falls kaputt
-  die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
-  <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
-  }
-  $sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_account AS a ON ua.userID = a.userID WHERE a.username = 'Account'";
-  $result = $conn->query($sqlCheck);
-  $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Upgrades gekauft: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
-  
-  for($i = 0; $i <= 7; $i++)  {
-  
-  echo $categories[$i];
-  $row = $result->fetch_assoc();
-  if($row["achievementID"] == $i + 1){
-  if($row["value"]==NULL){
-  echo "0";}
-  else{
-  echo $row["value"];
-  }
-  }else{
-  echo "0";
-  }
-  }
-  */
-  /*for($i = '0'; $i < '5'; $i++){
-  if($i == 3){
-  $result->fetch_assoc();
-  }
-  $row = $result->fetch_assoc();
-  //if($intarray[$i]== )
-  echo $array1[$i] . $row["value"];
-  }
-  1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer
-  */
+
 
   ?>
 
