@@ -16,7 +16,8 @@ session_start();
 
 
 //Weiterleitung wenn eingeloggt
-if ($_SESSION["loggedin"] == "1") {
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "1") {
 
   echo " 
   <script type=\"text/javascript\">
@@ -27,16 +28,7 @@ if ($_SESSION["loggedin"] == "1") {
   ";
 
 }
-if (!isset($_SESSION["loggedin"])) {
 
-  echo " 
-  <script type=\"text/javascript\">
-  
-  window.open('sign-in.php', '_self'); 
-  
-  </script>
-  ";
-}
 
 
 ?>
