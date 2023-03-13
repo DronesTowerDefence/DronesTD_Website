@@ -127,6 +127,7 @@ Coins: <code>" . $row["coins"] . "</code>
   <br>
   <br>
   <br>
+  <br>
  
   <!--Abmelden PHP wird aufgerufen-->
   <div id=links style="float:left;">
@@ -151,6 +152,8 @@ Coins: <code>" . $row["coins"] . "</code>
     </button>
   </form>
   </div>
+  <br>
+  <br>
   <br>
   <br>
   <br>
