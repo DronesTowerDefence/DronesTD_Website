@@ -120,7 +120,7 @@ Coins: <code>" . $row["coins"] . "</code>
     </form>
   </div>
 
-
+<!--ok-->
   <br>
   <br>
   <br>
