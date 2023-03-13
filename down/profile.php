@@ -141,7 +141,6 @@ Coins: <code>" . $row["coins"] . "</code>
   <!--Delete Account PHP wird aufgerufen-->
   <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
-    <br>
     <label>
       <input type='checkbox' name='check' required>
       Wirklich irreversibel löschen?
