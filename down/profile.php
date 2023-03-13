@@ -127,17 +127,16 @@ Coins: <code>" . $row["coins"] . "</code>
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+ 
   <!--Abmelden PHP wird aufgerufen-->
+  <div id=links style="float:left;">
   <form action='log_out.php' method='post'>
     <br>
     <button>
       <p style="color: red">Abmelden
     </button>
   </form>
-
+</div>
   <!--Delete Account PHP wird aufgerufen-->
   <form action='deleteAcc.php' method='post'>
     <br>
