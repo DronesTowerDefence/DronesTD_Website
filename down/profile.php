@@ -104,7 +104,8 @@ Coins: <code>" . $row["coins"] . "</code>
   <br>
   <br>
   <br>
-
+  <br>
+  <br>
 
 
 
