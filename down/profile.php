@@ -154,8 +154,9 @@ Coins: <code>" . $row["coins"] . "</code>
   <br>
   <br>
   <br>
-  <hr>
   <br>
+  <br>
+  <hr>
   <form action='updatePassword.php' method='post'>
     <br>
     <label>
