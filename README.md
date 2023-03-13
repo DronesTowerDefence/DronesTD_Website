@@ -1,6 +1,7 @@
 # DronesTD_Website
 Main-Github: https://github.com/DronesTowerDefence/DTD
 
-kelp
+Host & Konfig. & CSS & Datenbank & Content & Client-Kommunikation: kelp
 
+Subdomain:
 Wiki: Chico (Daniel)
