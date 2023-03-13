@@ -3,7 +3,7 @@
 <html id="html" lang="de" class=dn>
 
 <head>
-    <link rel="icon" href="img/icon.png">
+    <link rel="icon" href="../img/icon.png">
     <meta charset="utf-8">
     <link rel="stylesheet" href="../stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,6 @@
     </div>
     <br> <br>
 </body>
-
 
 
 <?php
@@ -126,3 +125,5 @@ echo "Ihr Account wurde erstellt!
 
 //Schließen der Datenbank
 $conn->close();
+
+?>

@@ -2,9 +2,7 @@
 
 session_start();
 
-
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
-
 
 
 if (!$check) {
@@ -53,13 +51,6 @@ $_SESSION["loggedin"] = 0;
 unset($_SESSION["username"]);
 unset($_SESSION["email"]);
 unset($_SESSION["admin"]);
-
-
-/*echo "
-<script type=\"text/javascript\">
-window.open('../index.html', '_self'); 
-</script>
-";*/
 
 $conn->close();
 

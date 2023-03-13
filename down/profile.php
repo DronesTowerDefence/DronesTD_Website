@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+//Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
+if ($_SESSION["loggedin"] == 0) {
+
+  die("Sie sind nicht angemeldet. <br> <br>
+<a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
+
+}
+?>
+
 <script>
   Cache - Control: no - cache, must - revalidate
   Cache - Control: no - store
@@ -7,7 +20,7 @@
 <html id="html" lang="de" class=dn>
 
 <head>
-  <link rel="icon" href="img/icon.png">
+  <link rel="icon" href="../img/icon.png">
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,16 +54,6 @@
 
 
   <?php
-
-  session_start();
-
-  //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
-  if ($_SESSION["loggedin"] == 0) {
-
-    die("Sie sind nicht angemeldet. <br> <br>
-  <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
-
-  }
 
   $host = "localhost:3306"; //Datenbankdetails
   $dbname = "dronestd_account";

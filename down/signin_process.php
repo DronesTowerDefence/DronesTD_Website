@@ -1,5 +1,3 @@
-<!-- #region PHP-->
-
 <?php
 
 session_start();
@@ -67,7 +65,7 @@ if(password_verify($passwort, $row["passwort"])){
     </script>
     ";
     
-    //Shcließen der Datenbbank
+    //Schließen der Datenbbank
     $conn->close();
 }else{
     die("Passwort stimmt nicht überein!

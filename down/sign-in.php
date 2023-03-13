@@ -2,7 +2,7 @@
 <html id="html" lang="de" class=dn>
 
 <head>
-  <link rel="icon" href="img/icon.png">
+  <link rel="icon" href="../img/icon.png">
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,16 @@ if ($_SESSION["loggedin"] == "1") {
   </script>
   ";
 
+}
+if (!isset($_SESSION["loggedin"])) {
+
+  echo " 
+  <script type=\"text/javascript\">
+  
+  window.open('sign-in.php', '_self'); 
+  
+  </script>
+  ";
 }
 
 
