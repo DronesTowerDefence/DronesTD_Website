@@ -138,6 +138,7 @@ Coins: <code>" . $row["coins"] . "</code>
   </form>
 </div>
   <!--Delete Account PHP wird aufgerufen-->
+  <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
     <br>
     <label>
@@ -149,6 +150,7 @@ Coins: <code>" . $row["coins"] . "</code>
       <p style="color: red">Löschen
     </button>
   </form>
+  </div>
   <br>
   <hr>
   <br>
