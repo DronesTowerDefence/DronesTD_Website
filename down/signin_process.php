@@ -26,7 +26,7 @@ if (mysqli_connect_errno()) {
 
 //Checkt nach eingegebene AnmeldeDaten
 
-$sqlCheck = "SELECT username, email , admin FROM user_account WHERE 
+$sqlCheck = "SELECT username, email , test FROM user_account WHERE 
 email = '$email' AND passwort = '$passwort'";
 
 $result = $conn->query($sqlCheck);
@@ -51,7 +51,7 @@ if ($result->num_rows == 0) {
 
 $row = $result->fetch_assoc();
 $username = $row["username"];
-$admin = $row["admin"];
+$admin = $row["test"];
 
 //Sessions werden gesetzt für einfache Verwendung in Zukunft, (damit nicht auf jeder Seite eine sql-Abfrage gemacht werden muss)
 
