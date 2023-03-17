@@ -1,11 +1,10 @@
 <?php
 
-
 session_start();
 
 
 $check = filter_input(INPUT_POST, "check", FILTER_VALIDATE_BOOLEAN);
-$new_name = $_POST["new_name"];
+$new = $_POST["new_name"]; //Zu faul für's umbenennen
 
 
 if (!$check) {
@@ -17,6 +16,8 @@ $dbname = "dronestd_account";
 $username1 = "db_access";
 $password = "aYOKWhS2lVntnAsB";
 
+$new = password_hash($new, PASSWORD_DEFAULT);
+
 $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
 
 if (mysqli_connect_errno()) { //falls kaputt
@@ -25,7 +26,7 @@ if (mysqli_connect_errno()) { //falls kaputt
 }
 
 //Abfrage wird als String gespeichert
-$sqlCheck = "UPDATE user_account SET passwort = '$new_name' WHERE username = '$_SESSION[username]'";
+$sqlCheck = "UPDATE user_account SET passwort = '$new' WHERE username = '$_SESSION[username]'";
 
 $result = $conn->query($sqlCheck);
 
@@ -34,6 +35,7 @@ $_SESSION["loggedin"] = 0;
 //Gespeicherte Seyssions werden gelöscht.
 unset($_SESSION["username"]);
 unset($_SESSION["email"]);
+unset($_SESSION["admin"]);
 
 
 //Weiterleitung 

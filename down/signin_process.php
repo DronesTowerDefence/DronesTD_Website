@@ -1,5 +1,3 @@
-<!-- #region PHP-->
-
 <?php
 
 session_start();
@@ -26,8 +24,8 @@ if (mysqli_connect_errno()) {
 
 //Checkt nach eingegebene AnmeldeDaten
 
-$sqlCheck = "SELECT username, email , test FROM user_account WHERE 
-email = '$email' AND passwort = '$passwort'";
+$sqlCheck = "SELECT username, email, passwort  , admin FROM user_account WHERE 
+email = '$email'";
 
 $result = $conn->query($sqlCheck);
 
@@ -40,37 +38,40 @@ if ($result->num_rows == 0) {
     <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
 
 }
-
-//CSS hierhin:
-
-//::
-
 //fetch_assoc übergibt die erste Spalte.(in einer Forshcleife geht es automatisch zur nächsten Spalte bei jedem Aufruf,
 //aber da wir nur einen User mit den Daten haben, gibt es nur einen Aufruf)
 //Nun können wir mit nennen des Attributnamen der DB den Inhalt in $row zwischenspeichern
-
 $row = $result->fetch_assoc();
-$username = $row["username"];
-$admin = $row["test"];
+//! hätte auch gereicht, 
+if(password_verify($passwort, $row["passwort"])){
+    
 
-//Sessions werden gesetzt für einfache Verwendung in Zukunft, (damit nicht auf jeder Seite eine sql-Abfrage gemacht werden muss)
+    $username = $row["username"];
+    $admin = $row["admin"];
+    
+    //Sessions werden gesetzt für einfache Verwendung in Zukunft, (damit nicht auf jeder Seite eine sql-Abfrage gemacht werden muss)
+    
+    $_SESSION["email"] = $email;
+    $_SESSION["username"] = $username;
+    $_SESSION["loggedin"] = 1; //eingeloggt-Status
+    $_SESSION["admin"] = $admin;
+    
+    //JavaScript weiterleitung
+    echo "
+    <script type=\"text/javascript\">
+    
+    window.open('profile.php', '_self'); 
+    
+    </script>
+    ";
+    
+    //Schließen der Datenbbank
+    $conn->close();
+}else{
+    die("Passwort stimmt nicht überein!
+    <br><br> Hier gehts zurück: 
+    <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Anmeldung</b></a></p>");
+}
 
-$_SESSION["email"] = $email;
-$_SESSION["username"] = $username;
-$_SESSION["loggedin"] = 1; //eingeloggt-Status
-$_SESSION["admin"] = $admin;
-
-//JavaScript weiterleitung
-echo "
-<script type=\"text/javascript\">
-
-window.open('profile.php', '_self'); 
-
-</script>
-";
-
-//Shcließen der Datenbbank
-$conn->close();
 
 ?>
-<!-- #endregion -->

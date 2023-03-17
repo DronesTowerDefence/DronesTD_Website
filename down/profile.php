@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+//Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
+if ($_SESSION["loggedin"] == 0) {
+
+  die("Sie sind nicht angemeldet. <br> <br>
+<a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
+
+}
+?>
+
 <script>
   Cache - Control: no - cache, must - revalidate
   Cache - Control: no - store
@@ -7,7 +20,7 @@
 <html id="html" lang="de" class=dn>
 
 <head>
-  <link rel="icon" href="img/icon.png">
+  <link rel="icon" href="../img/icon.png">
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,17 +55,18 @@
 
   <?php
 
-  session_start();
-
-  //Profilseite ohne loggedIN-Status nicht aufrufbar. (Softlock)
-  if ($_SESSION["loggedin"] == 0) {
-
-    die("Sie sind nicht angemeldet. <br> <br>
-  <a href='https://www.dronestd.de/down/sign-in.php'>-><b>Startseite</b></a></p>");
-
+  $host = "localhost:3306"; //Datenbankdetails
+  $dbname = "dronestd_account";
+  $username1 = "db_access";
+  $password = "aYOKWhS2lVntnAsB";
+  $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
+  if (mysqli_connect_errno()) { //falls kaputt
+  die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
+  <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
   }
-
-
+  $sqlCheck = "SELECT coins FROM user_account WHERE username = '$_SESSION[username]'";
+  $result = $conn->query($sqlCheck);
+  $row = $result->fetch_assoc();
 
 
   //Bildname ist mit Username gespeichert. Da Sessions (Username ist dort gespeichert) nur mit PHP ausgelesen werden können,
@@ -75,51 +89,14 @@ Nutzername: <code>" . $_SESSION["username"] . " </code>
 <br> 
 Email: <code>" . $_SESSION["email"] . "</code>
 <br> 
+Coins: <code>" . $row["coins"] . "</code>
 <br>
-<h2> Statistiken: </h2>
 <br>
 <br>
-Kommt.
+<br>
+
 ";
-  /*
-  $host = "localhost:3306"; //Datenbankdetails
-  $dbname = "dronestd_account";
-  $username1 = "db_access";
-  $password = "aYOKWhS2lVntnAsB";
-  $conn = mysqli_connect($host, $username1, $password, $dbname); //connection wird gespeichert
-  if (mysqli_connect_errno()) { //falls kaputt
-  die("Verbindungsfehler: " . mysqli_connect_error() . "<br><br> Hier gehts zurück: 
-  <a href='https://www.dronestd.de'>-><b>Startseite</b></a></p>");
-  }
-  $sqlCheck ="SELECT achievementID, value FROM user_achievement AS ua JOIN user_account AS a ON ua.userID = a.userID WHERE a.username = 'Account'";
-  $result = $conn->query($sqlCheck);
-  $categories = array("Drohnen zerstört: ","<br>Türme platziert: ", "<br>Geld verdient: ","<br>Upgrades gekauft: ","<br>Siege: ","<br>Matches gespielt (ges.): ", "<br>Multiplayermatches gespielt: ");
-  
-  for($i = 0; $i <= 7; $i++)  {
-  
-  echo $categories[$i];
-  $row = $result->fetch_assoc();
-  if($row["achievementID"] == $i + 1){
-  if($row["value"]==NULL){
-  echo "0";}
-  else{
-  echo $row["value"];
-  }
-  }else{
-  echo "0";
-  }
-  }
-  */
-  /*for($i = '0'; $i < '5'; $i++){
-  if($i == 3){
-  $result->fetch_assoc();
-  }
-  $row = $result->fetch_assoc();
-  //if($intarray[$i]== )
-  echo $array1[$i] . $row["value"];
-  }
-  1Drohnen;2TürmePlatziert;3Geld;5Siege;6Matches;7Multiplayer
-  */
+
 
   ?>
 
@@ -127,7 +104,8 @@ Kommt.
   <br>
   <br>
   <br>
-
+  <br>
+  <br>
 
 
 
@@ -142,7 +120,7 @@ Kommt.
     </form>
   </div>
 
-
+<!--ok-->
   <br>
   <br>
   <br>
@@ -150,31 +128,36 @@ Kommt.
   <br>
   <br>
   <br>
-  <br>
-  <br>
+ 
   <!--Abmelden PHP wird aufgerufen-->
+  <div id=links style="float:left;">
   <form action='log_out.php' method='post'>
     <br>
     <button>
       <p style="color: red">Abmelden
     </button>
   </form>
-
+</div>
   <!--Delete Account PHP wird aufgerufen-->
+  <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
-    <br>
     <label>
       <input type='checkbox' name='check' required>
       Wirklich irreversibel löschen?
     </label>
-    &emsp;
     <button>
       <p style="color: red">Löschen
     </button>
   </form>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <br>
   <hr>
-  <br>
   <form action='updatePassword.php' method='post'>
     <br>
     <label>
