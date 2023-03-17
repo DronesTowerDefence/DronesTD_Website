@@ -127,7 +127,11 @@ if ($_SESSION["admin"] != "1") {
       </label> <br>
       <label>
         <input type="checkbox" name="turm6">
-        Turm 5 erlaubt
+        Turm 6 erlaubt
+      </label> <br>
+      <label>
+        <input type="checkbox" name="turm7">
+        Turm 7 erlaubt
       </label> <br>
       <br>
       <br>
