@@ -20,7 +20,7 @@ if ($_SESSION["loggedin"] == 0) {
 <html id="html" lang="de" class=dn>
 
 <head>
-  <link rel="icon" href="../img/icon.png">
+  <link rel="icon" href="../img/icon.ico">
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
