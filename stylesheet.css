@@ -152,14 +152,7 @@ body {
 
 /*Transition bei Klick (Danke Stackoverflow)*/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-strong,
+h1, h2, h3, h4, h5, h6, b, strong,
 th {
   margin-bottom: 12px;
   margin-top: 24px;
@@ -206,13 +199,6 @@ a[href^='mailto\:']::before {
   content: '📧 ';
 }
 
-a[href^='tel\:']::before {
-  content: '📞 ';
-}
-
-a[href^='sms\:']::before {
-  content: '💬 ';
-}
 
 mark {
   background-color: #efdb43;
@@ -223,28 +209,13 @@ mark {
 }
 
 
-a>code,
-a>strong {
-  color: inherit;
-}
 
-button,
-select,
-input[type='submit'],
-input[type='button'],
-input[type='checkbox'] {
-  cursor: pointer;
-}
 
 input,
 select {
   display: block;
 }
 
-[type='checkbox'],
-[type='radio'] {
-  display: initial;
-}
 
 input {
   color: #fff;
@@ -298,30 +269,6 @@ textarea {
 
 
 
-button,
-input[type='submit'],
-input[type='button'] {
-  background-color: #0c151c;
-  background-color: var(--button-base);
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-button:hover,
-input[type='submit']:hover,
-input[type='button']:hover {
-  background: #040a0f;
-  background: var(--button-hover);
-}
-
-input[type='checkbox'],
-input[type='radio'] {
-  height: 1em;
-  width: 1em;
-}
-
-
-
 textarea {
   display: block;
   margin-right: 0;
@@ -335,14 +282,6 @@ input[type='submit']:active,
 input[type='button']:active,
 button:active {
   transform: translateY(2px);
-}
-
-input:disabled,
-select:disabled,
-button:disabled,
-textarea:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
 }
 
 a {
@@ -401,57 +340,5 @@ footer {
   padding-top: 10px;
   color: #a9b1ba;
   color: var(--text-muted);
-}
-
-
-body>footer {
-  margin-top: 40px;
-}
-
-button {
-  transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
-  transition:
-    background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-}
-
-
-input {
-  transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
-  transition:
-    background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
-}
-
-
-textarea {
-  transition:
-    background-color 0.1s linear,
-    border-color 0.1s linear,
-    color 0.1s linear,
-    box-shadow 0.1s linear,
-    transform 0.1s ease;
-  transition:
-    background-color var(--animation-duration) linear,
-    border-color var(--animation-duration) linear,
-    color var(--animation-duration) linear,
-    box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
 }
 
