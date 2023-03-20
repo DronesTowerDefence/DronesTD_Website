@@ -2,7 +2,7 @@
 <html id="html" lang="de" class=dn>
 
 <head>
-  <link rel="icon" href="../img/icon.png">
+  <link rel="icon" href="../img/icon.ico">
   <meta charset="utf-8">
   <link rel="stylesheet" href="../stylesheet.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,7 +127,11 @@ if ($_SESSION["admin"] != "1") {
       </label> <br>
       <label>
         <input type="checkbox" name="turm6">
-        Turm 5 erlaubt
+        Turm 6 erlaubt
+      </label> <br>
+      <label>
+        <input type="checkbox" name="turm7">
+        Turm 7 erlaubt
       </label> <br>
       <br>
       <br>
