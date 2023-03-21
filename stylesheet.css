@@ -211,8 +211,7 @@ mark {
 
 
 
-input,
-select {
+input, select {
   display: block;
 }
 
@@ -305,8 +304,7 @@ code {
 }
 
 
-img,
-video {
+img, video {
   max-width: 100%;
   height: auto;
 }
@@ -325,8 +323,7 @@ table {
 }
 
 
-td,
-th {
+td, th {
   padding: 6px;
   text-align: left;
   vertical-align: top;
