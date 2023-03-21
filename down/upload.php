@@ -4,7 +4,7 @@ session_start();
 $temp = explode(".", $_FILES["file"]["name"]);
 $newfilename = $_SESSION["username"] . '.' . end($temp);
 //
-$target_dir = "http://client.DronesTD.de/";
+$target_dir = "https://www.minigame.DronesTD.de/";
 $target_file1 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file1, PATHINFO_EXTENSION));
 $target_file = $target_dir . $newfilename . $imageFileType;
@@ -36,6 +36,7 @@ if ($uploadOk == 0) {
   <br><br> Hier gehts zum Profil zurück: 
   <a href='https://www.dronestd.de/down/profile.php'>-><b>Profil</b></a></p>";
   // Wenn alles ok ist, wird 
+  
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file)) {
     echo "Die Datei" . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " wurde hochgeladen. <br><br> Hier gehts zum Profil zurück: 
