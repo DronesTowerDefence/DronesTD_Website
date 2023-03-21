@@ -4,7 +4,7 @@ session_start();
 $temp = explode(".", $_FILES["file"]["name"]);
 $newfilename = $_SESSION["username"] . '.' . end($temp);
 //
-$target_dir = "../../dronesClient.DronesTD.de/";
+$target_dir = "../../client.DronesTD.de/";
 $target_file1 = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file1, PATHINFO_EXTENSION));
 $target_file = $target_dir . $newfilename . $imageFileType;
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
 }
 
 // Größe des Bilds                    in Byte 
-if ($_FILES["fileToUpload"]["size"] > 100000) {
+if ($_FILES["fileToUpload"]["size"] > 1000000) {
   echo "Bild ist größer als 1000KB";
   $uploadOk = 0;
 }
