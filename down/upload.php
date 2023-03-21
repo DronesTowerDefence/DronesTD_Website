@@ -28,6 +28,8 @@ if ($_FILES["fileToUpload"]["size"] > 100000) {
   $uploadOk = 0;
 }*/
 
+echo "Zielpfad: " . $target_file . "<br>";
+
 // Falls obigen Abfragen null sind.
 if ($uploadOk == 0) {
   echo " Die Datei wurde nicht hochgeladen. 
