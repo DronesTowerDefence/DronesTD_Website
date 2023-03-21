@@ -11,7 +11,7 @@ $target_file = $target_dir . $newfilename . $imageFileType;
 $uploadOk = 1;
 
 // Bild?
-if (isset($_POST["submit"])) {
+/*if (isset($_POST["submit"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   if ($check !== false) {
 
@@ -23,7 +23,7 @@ if (isset($_POST["submit"])) {
 }
 
 // Größe des Bilds                    in Byte 
-/*if ($_FILES["fileToUpload"]["size"] > 100000) {
+if ($_FILES["fileToUpload"]["size"] > 100000) {
   echo "Bild ist größer als 1000KB";
   $uploadOk = 0;
 }*/
