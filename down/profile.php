@@ -73,7 +73,7 @@ if ($_SESSION["loggedin"] == 0) {
 //echost du die HTML-Anweisungen, und schiebst den Session-Username zwischen.
 //Praktisch kann man mit PHP ganz einfach HTML echo'n und einschieben.
   
-  echo "<h1> Profil </h1> <img src='http://www.dronesClient.DronesTD.de/";
+  echo "<h1> Profil </h1> <img src='http://www.client.DronesTD.de/";
   echo $_SESSION["username"];
   echo ".png' style='float:right;width:250px;height:250px;> '";
   echo "<br>";
