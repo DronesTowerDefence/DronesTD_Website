@@ -147,7 +147,7 @@ Coins: <code>" . $row["coins"] . "</code>
      <input type='checkbox' name='check' required>
       Wirklich irreversibel löschen?
     </label> 
-    <br>
+    
     <button>
      Löschen
     </button>
