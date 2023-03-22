@@ -141,15 +141,14 @@ Coins: <code>" . $row["coins"] . "</code>
   <!--Delete Account PHP wird aufgerufen-->
   <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
-    <label>
-
-     <input type='checkbox' name='check' required>
-      Wirklich irreversibel löschen?
-    </label> 
+    
     <button>
      Löschen
     </button>
-    
+    <label>
+     <input type='checkbox' name='check' required>
+      Wirklich irreversibel löschen?
+    </label> 
   </form>
   </div>
   <br>
@@ -172,7 +171,7 @@ Coins: <code>" . $row["coins"] . "</code>
     <input type="password" id="new_name" name="new_name" required maxlength="18" placeholder="Max 18">
 
     <button>
-      <p style="color: red">Ändern
+    Ändern
     </button>
   </form>
 
