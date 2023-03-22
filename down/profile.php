@@ -142,12 +142,13 @@ Coins: <code>" . $row["coins"] . "</code>
   <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
     <label>
-      <input type='checkbox' name='check' required>
-      Wirklich irreversibel löschen?
-    </label>
+      
     <button>
       <p style="color: red">Löschen
     </button>
+    <input type='checkbox' name='check' required>
+      Wirklich irreversibel löschen?
+    </label>
   </form>
   </div>
   <br>
@@ -160,12 +161,13 @@ Coins: <code>" . $row["coins"] . "</code>
   <hr>
   <form action='updatePassword.php' method='post'>
     <br>
+    
+    <br>
+    <label for="new_name">Neues Passwort:</label>
     <label>
       <input type='checkbox' name='check' required>
       Wirklich Passwort ändern?
     </label>
-    <br>
-    <label for="new_name">Neues Passwort:</label>
     <input type="password" id="new_name" name="new_name" required maxlength="18" placeholder="Max 18">
 
     <button>
