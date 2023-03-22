@@ -134,7 +134,7 @@ Coins: <code>" . $row["coins"] . "</code>
   <form action='log_out.php' method='post'>
     <br>
     <button>
-      <p style="color: red">Abmelden
+    Abmelden
     </button>
   </form>
 </div>
@@ -142,13 +142,14 @@ Coins: <code>" . $row["coins"] . "</code>
   <div id=rechts style="float:right;">
   <form action='deleteAcc.php' method='post'>
     <label>
-      
-    <button>
-      <p style="color: red">Löschen
-    </button>
-    <input type='checkbox' name='check' required>
+
+     <input type='checkbox' name='check' required>
       Wirklich irreversibel löschen?
-    </label>
+    </label> 
+    <button>
+     Löschen
+    </button>
+    
   </form>
   </div>
   <br>
